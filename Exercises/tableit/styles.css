@@ -1,0 +1,13 @@
+table{
+    background-color: darkgoldenrod;
+    border-collapse: collapse;
+    width: 100%;
+    
+
+}
+
+td, th{
+    border: 1px solid slateblue;
+    text-align: left;
+    padding: 5px;
+}

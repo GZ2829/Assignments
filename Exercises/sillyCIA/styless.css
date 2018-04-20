@@ -1,4 +1,6 @@
-
+#panda{
+    text-decoration: none;
+}
 
 h1{
     color: darkgreen;
@@ -12,4 +14,6 @@ h1{
 
 .ship {
     text-align: right;
+    line-height: 25px;
+
 }

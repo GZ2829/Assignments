@@ -1,0 +1,56 @@
+
+body{
+    background-color: gainsboro
+}
+
+
+
+section p{
+    text-decoration-line: underline;
+}
+
+
+
+h1 {
+    color: forestgreen;
+    font-family: 'Times New Roman';
+    text-align: center;
+    font-weight: bolder;
+}
+
+p{
+    color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: left
+}
+
+
+.congress{
+    font-weight: bold;
+}
+
+.jobs li{
+    display: inline-block;
+    width: 33%;
+    font-size: 15px;
+}
+
+#jobheader{
+    font-weight: bold
+}
+
+.jobpics{
+    display: inline-block;
+   line-height: 50px;
+}
+
+.mainstory{
+    
+    text-align: right
+}
+
+.sameline{
+    display: inline-block;
+   
+    
+}

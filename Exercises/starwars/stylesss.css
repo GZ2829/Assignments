@@ -1,0 +1,31 @@
+
+
+body{
+    background-color: #111111;
+    border-width: 30px;
+}
+
+
+
+h1{
+    color: #E2E80F;
+    text-align: center;
+}
+
+p{
+    color: #eeeeee;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.credits{
+    color: blue;
+    text-decoration: blue;
+    cursor: pointer;
+}
+ 
+#film-description{
+    font-size: 13px;
+    font-style: italic;
+    
+}

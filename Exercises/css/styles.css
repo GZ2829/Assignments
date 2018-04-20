@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box; 
+    font-size: 0px;
+}
+
+
+
+.pinkbox{
+    background-color: pink;
+    width: 98%;
+    height: 100px;
+    border: 15px white;
+    display: block;
+}
+
+.redbox{
+    background-color: tomato;
+    width: 23.75%;
+    height: 100px;
+    border: 15px white;
+    margin: 5px;
+    display: inline-block
+}
+
+.lightblue{
+    background-color: turquoise;
+    width: 48.5%;
+    height: 100px;
+    border: 15px white;
+    margin: 5px;
+    display: inline-block;
+}
+
+
+
+.greenbox{
+    display: inline-block;
+    background-color: seagreen;
+    width: 71%;
+    height: 100px;
+    margin: 5px;
+}
+
+.orangebox{
+    display: inline-block;
+    background-color: orange;
+    width: 26%;
+    height: 100px;
+    margin: 5px
+
+}
+
+
