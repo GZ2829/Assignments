@@ -1,0 +1,36 @@
+
+body{
+    background-color: darkolivegreen;
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
+
+.navbar p{
+    display: inline-block;
+    word-spacing: 100px;
+}
+
+.navbar{
+    background-color: coral;
+    border: black;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+}
+
+.posts{
+    background-color: blue;
+    position: relative;
+    left: 200px;
+    top: 10%;
+    width: 60%;
+    height:3000px;
+
+}
+
+.poststyles{
+    border: black, 10px;
+    text-align: center;
+    font-family: sans-serif
+}

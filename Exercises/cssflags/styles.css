@@ -1,0 +1,177 @@
+.france{
+    background-color: white;
+    border-block-end: 10px;
+    border-color: black, 10px;
+}
+
+.fblue{
+    background-color: blue;
+    height: 50px;
+    width: 15%;
+    position: relative;
+    left: 0px;
+    height:200px;
+    top: 0px;
+}
+
+.fred{
+    background-color: red;
+    height: 50px;
+    width: 15%;
+    position: absolute;
+    left: 300px;
+    height: 200px;
+    top: 7px;
+}
+
+.germanyb {
+    background-color: black;
+    height: 80px;
+    width: 400px;
+    position: relative;
+    right: 0px;
+}
+
+.gred {
+    background-color: red;
+    height: 80px;
+    width: 433px;
+    position: relative;
+    right: 0px;
+}
+
+
+.gyellow{
+    background-color: yellow;
+    height: 80px;
+    width: 433px;
+    position: relative;
+    right: 0px;
+    top: 0px;
+}
+
+
+.black{
+    background-color: black;
+    height: 80px;
+    width: 433px;
+    position: relative;
+    right: 0px;
+    top: 0px;
+}
+
+.mad{
+    position: relative;
+    right: 0px;
+}
+
+
+
+.madwhite{
+    border-color: solid, black, 10px;
+    background-color: white;
+    height: 0px
+
+}
+
+.madred{
+    background-color: red;
+    position: relative;
+    height: 100px;
+    width: 283px;
+    left: 150px
+}
+
+.madgreen{
+    background-color: green;
+    position: relative;
+    height: 100px;
+    width: 283px;
+    left: 150px
+}
+
+
+.sred{
+    background-color: red;
+    position: relative;
+    height: 228px;
+    width: 433px;
+}
+
+.swhite1{
+    background-color: white;
+    position: relative;
+    height: 50px;
+    width: 204px;
+    left: 100px;
+    top: 87px;
+    z-index: 2;
+}
+
+.swhite2{
+    background-color: white;
+    position: relative;
+    height: 176px;
+    width: 50px;
+    left: 175px;
+    top: -25px;
+    z-index: 2;
+}
+
+.swedblue{
+    background-color: blue;
+    position: relative;
+    height: 228px;
+    width: 433px;
+}
+
+.swedyellow1{
+    background-color: yellow;
+    position: relative;
+    height: 228px;
+    width: 50px;
+    left: 133px;
+    top: 0px;
+    z-index: 2;
+}
+
+.swedyellow2{
+    background-color: yellow;
+    position: relative;
+    height: 50px;
+    width: 433px;
+    left: 0px;
+    top: -135px;
+    z-index: 2;
+}
+
+.gamwhite{
+    background-color: white;
+    position: relative;
+    height: 228px;
+    width: 433px;
+}
+
+.gamred{
+    background-color: red;
+    position: relative;
+    height: 80px;
+    top: 0;
+
+}
+
+.gamblue{
+    background-color: blue;
+    position: relative;
+    height: 60px;
+    padding: 0px;
+    top: 15px;
+
+}
+
+.gamgreen{
+    background-color: green;
+    position: relative;
+    top: 15px;
+    height: 80px;
+}
