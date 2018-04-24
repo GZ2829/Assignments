@@ -56,3 +56,13 @@ var peopleArray = [
  for (var i = 0; i <= peopleArray.length; i++){
      console.log(peopleArray.name[i])
  }
+
+
+
+
+
+ for(var i=20; i>0; i-=2){
+    console.log(i)
+ }
+
+
