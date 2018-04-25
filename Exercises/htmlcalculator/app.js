@@ -4,10 +4,6 @@
 
 
 
-
-
-
-
 document.add.addEventListener("submit", function(e){
     e.preventDefault();
     var a = document.add.ge.value;
