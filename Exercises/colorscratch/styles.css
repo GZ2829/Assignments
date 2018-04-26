@@ -1,4 +1,4 @@
-* {
+/* * {
 
 }
 
@@ -54,6 +54,7 @@
         width: 50%;
         height: 50px;
         align-self: center;
+        display: inline;
     }
     .redbox{
         width: 50%;
@@ -61,4 +62,6 @@
         align-self: center;
         display: inline;
     }
-}
+} */
+
+
