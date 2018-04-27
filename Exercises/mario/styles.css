@@ -45,6 +45,21 @@ div p{
     bottom: 28%;
 }
 
+#tuba1{
+    position: absolute;
+    display: inline-block;
+    right: 0%;
+    bottom: 28%;
+}
+
+#tuba2{
+    position: absolute;
+    display: inline-block;
+    right: 0%;
+    bottom: 28%;
+}
+
+
 .box{
     height: 50px;
 }
@@ -60,7 +75,7 @@ div p{
 #che{
     background-image: url(https://pre00.deviantart.net/c8f3/th/pre/f/2011/218/1/0/cheep_cheep_ragdolls_by_till_oilenspiegel-d45onxk.jpg);
     position: relative;
-    height: 315px;
+    height: 265px;
     display: inline-block;
     width: 100%
 }
@@ -95,13 +110,15 @@ div p{
 }
 
 footer{
-    position: inherit;
+    position: relative;
     font-size: 30px;
+    top: -55px;
+    width: 100%;
 }
 
 #sub{
    
-    height: 408px;
+    height: 358px;
     top: -308px;
     width: 320px;
     left: 900px;
@@ -126,4 +143,20 @@ footer{
     top: 74px;
     left: 44px;
     text-align: center;
+}
+
+#audio{
+    position: relative;
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+    top: 472px;
+    left: 644px;
+}
+
+
+#answer{
+    top: 188px;
+    left: 153px;
+    position: relative;
 }
