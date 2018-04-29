@@ -1,5 +1,5 @@
-var form = document.getElementByID("hello");
-var submit = document.getElementByID("submit");
+var form = document.getElementById("hello");
+var submit = document.getElementById("submit");
 var query = document.querySelector;
 
 function formAlert() {
