@@ -1,15 +1,77 @@
 header{
-    background-color: firebrick;
+    background-color: darkgray;
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: row;
+    justify-content: space-around;
     align-items: center;
     font-size: 30px;
-    font-stretch: expanded;
-    text-decoration-color: firebrick;
+    border-color: black;
     text-align: center;
+    z-index: 1;
+    position: fixed;
+    width: 100%;
+    padding: 20px;
 }
+
+header a{
+    text-decoration: none;
+    text-decoration: none;
+}
+
+
+#contactdiv{
+    background-color: firebrick;
+    height: 400px;
+    width: 800px;
+    display: inline-block;
+    left: 15%;
+    top: 154px;
+    position: relative;
+}
+
+#aboutdiv{
+    background-color: firebrick;
+    display: inline-block;
+    grid-column-start: 3;
+    grid-column-end: 3;
+    width: 500px;
+    height: 1000px;
+    grid-row-start: 3;
+    grid-row-end: 5;
+}
+
+
 
 body{
     background-image: url(http://bbp.style/PUBLIC/BIM-library/jpg-hires/australbricks/SanSelmo/AB-Bricks-SanSelmoReclaimed230x76-110-240-HiRes-NAT.jpg);
 
+}
+
+#farmerpic{
+    position: relative;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    display: inline-flex;
+    height: 400px;
+    width: 600px;
+    top: 124px;
+}
+
+#diagram{
+    position: relative;
+    display: inline-block;
+    height: 400px;
+    width: 600px;
+    bottom: 257px;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 4;
+    grid-row-end: 4;
+}
+
+#gridtest{
+    display: grid;
+    grid-row-gap: 10px;
 }
