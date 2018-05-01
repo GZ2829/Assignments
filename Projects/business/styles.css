@@ -1,5 +1,5 @@
 header{
-    background-color: darkgray;
+    background-color: lawngreen;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -11,6 +11,10 @@ header{
     position: fixed;
     width: 100%;
     padding: 20px;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 1;
 }
 
 header a{
@@ -20,39 +24,43 @@ header a{
 
 
 #contactdiv{
-    background-color: firebrick;
-    height: 400px;
+    background-color: green;
+    height: 648px;
     width: 800px;
     display: inline-block;
-    left: 15%;
-    top: 154px;
+    left: 22%;
+    top: 224px;
     position: relative;
 }
 
 #aboutdiv{
-    background-color: firebrick;
+    background-color: green;
     display: inline-block;
     grid-column-start: 3;
     grid-column-end: 3;
     width: 500px;
     height: 1000px;
-    grid-row-start: 3;
+    grid-row-start: 4;
     grid-row-end: 5;
+    position: relative;
+    top: -284px
 }
 
 
 
 body{
-    background-image: url(http://bbp.style/PUBLIC/BIM-library/jpg-hires/australbricks/SanSelmo/AB-Bricks-SanSelmoReclaimed230x76-110-240-HiRes-NAT.jpg);
-
+    background-image: url(https://www.iasoybeans.com/upl/images/articles/images/california-prop-65-glyphosate-and-soybeans-what-farmers-need-to-know-54d8798f.jpg);
+    background-size: 2296px;
+    background-repeat: no-repeat;
 }
+
 
 #farmerpic{
     position: relative;
     grid-column-start: 1;
     grid-column-end: 1;
-    grid-row-start: 2;
-    grid-row-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 3;
     display: inline-flex;
     height: 400px;
     width: 600px;
@@ -64,14 +72,57 @@ body{
     display: inline-block;
     height: 400px;
     width: 600px;
-    bottom: 257px;
+    bottom: 723px;
     grid-column-start: 1;
     grid-column-end: 1;
-    grid-row-start: 4;
-    grid-row-end: 4;
+    grid-row-start: 5;
+    grid-row-end: 5;
 }
 
 #gridtest{
     display: grid;
     grid-row-gap: 10px;
+    height: 100vh;
+}
+
+#abouth1{
+    font-size: 50px;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    background-color: green;
+    position: relative;
+    top: 100px;
+    right: 267px;
+    text-align: center;
+    font-family: sans-serif
+}
+
+#homeh{
+    font-size: 80px;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    position: relative;
+    top: 208px;
+    right: -2px;
+    text-align: center;
+    font-family: sans-serif;
+    color: saddlebrown;
+}
+
+#hometitle{
+    font-size: 50px;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    position: relative;
+    top: 100px;
+    right: -40px;
+    text-align: center;
+    font-family: sans-serif;
+    color: darkgreen;
 }
