@@ -1,0 +1,133 @@
+#box1{
+    left: 50px;
+    bottom: -27px;
+    height: 200px;
+    width: 200px;
+    background-color: brown;
+    position: relative;
+    display: inline-flex;
+    box-shadow: 4px 5px 0 0 #777;
+    border-radius: 2%;
+    transition-property: all;
+    transition-duration: 1s;
+}
+
+#box2{
+    left: 296px;
+    bottom: -28px;
+    height: 200px;
+    width: 200px;
+    background-color: yellow;
+    position: relative;
+    display: inline-flex;
+    box-shadow: 4px 5px 0 0 #777;
+    border-radius: 2%;
+    transition-property: all;
+    transition-duration: 1s;
+}
+
+#box3{
+    left: 550px;
+    bottom: -28px;
+    height: 200px;
+    width: 200px;
+    background-color: violet;
+    position: relative;
+    display: inline-flex;
+    box-shadow: 4px 5px 0 0 #777;
+    border-radius: 2%;
+    transition-property: all;
+    transition-duration: 1s;
+}
+
+#box4{
+    left: -350px;
+    bottom: -400px;
+    height: 200px;
+    width: 200px;
+    background-color: slategray;
+    position: relative;
+    display: inline-flex;
+    box-shadow: 4px 5px 0 0 #777;
+    border-radius: 2%;
+    transition-property: all;
+    transition-duration: 1s;
+}
+
+#box5{
+    height: 200px;
+    width: 200px;
+    display: block;
+    background-color: palevioletred;
+    position: relative;
+    left: 710px;
+    bottom: -200px;
+    padding: 5px;
+    transition-property: all;
+    transition-duration: 1s;
+    box-shadow: 4px 5px 0 0 #777;
+    border-radius: 2%;
+    
+}
+#box1:hover{
+    background-color: blue;
+    border: 5px solid black;
+    border-radius: 5%;
+    box-shadow: 14px 19px 0 0;
+    height: 200px;
+    width: 250px;
+    position: relative;
+    opacity: .7;
+    display: inline-flex;
+}
+#box2:hover{
+    background-color: darkorange;
+    border: 5px solid brown;
+    border-radius: 5%;
+    box-shadow: 14px 19px 0 0;
+    height: 200px;
+    width: 200px;
+    position: relative;
+    opacity: .7;
+    display: inline-flex;
+}
+#box3:hover{
+    background-color: purple;
+    border: 5px solid black;
+    border-radius: 5%;
+    box-shadow: 14px 19px 0 0;
+    height: 200px;
+    width: 200px;
+    position: relative;
+    opacity: .7;
+    display: inline-flex;
+}
+#box4:hover{
+    background-color: cyan;
+    border: 5px solid black;
+    border-radius: 5%;
+    box-shadow: 14px 19px 0 0;
+    height: 200px;
+    width: 200px;
+    position: relative;
+    opacity: .7;
+    display: inline-flex;
+}
+
+#box5:hover{
+    background-color: gold;
+    border: 5px solid red;
+    border-radius: 5%;
+    box-shadow: 14px 19px 0 0;
+    padding: 15px ;
+    height: 250px;
+    width: 250px;
+    position: relative;
+    opacity: .7;
+    display: inline-flex;
+}
+
+body{
+    background-color: palegreen;
+
+}
