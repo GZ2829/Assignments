@@ -1,0 +1,32 @@
+ {
+
+     "appetizers":
+         {
+         "Mozz sticks": "cheese sticks",
+         "ingredients": ["bread crumbs", "mozzerela"]
+        },
+         "garlic bread": "bread convered in garlic and butter",
+         "ingredients": ["bread", "butter", "garlic"]
+        {
+         "chicken nuggets": "pieces of chicken covered in bread",
+         "ingredients": ["bread crumbs","chicken"]
+        }
+        "cold sandwhiches":
+        {
+         "Ham and cheese sandwhich": "A sandwhich "
+        }
+         "Turkery sandwhich",
+         
+         "
+     ]
+     "Hot sandwhiches":[
+         "cluckin russian",
+         "balboa"
+     ]
+     "desserts":[
+         "giant cookie"
+
+     ]
+ }]
+     
+ ]
