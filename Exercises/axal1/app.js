@@ -25,7 +25,8 @@ document.holy.addEventListener('submit',function(e){
     var doe = {
         title: document.holy.title.value,
         description: document.holy.description.value,
-        price: document.holy.price.value
+        price: document.holy.price.value,
+        image: document.holy.image.value
     }
 
     axios.post(todou, doe).then(function(response){
@@ -38,6 +39,7 @@ document.holy.addEventListener('submit',function(e){
 function displayData(arr){
     if(arr.length){
         arr.map(function(todou){
+
             var title = document.createElement('h2');
             title.textContent = todou.title;
         
@@ -45,11 +47,21 @@ function displayData(arr){
             description.textContent = todou.description;
         
             var price = document.createElement('h6')
-            price.textContent = todou.price
-        
+            price.textContent = todou.price;
+
+            var input = document.createElement('input')
+            input.type = "checkbox"
+
+            var image = document.createElement('img')
+            image.src = todou.imgUrl;
+
+
+            display.appendChild(image)
+            display.appendChild(input)
             display.appendChild(title);
             display.appendChild(description);
             display.appendChild(price);
+
         })
     }
 }

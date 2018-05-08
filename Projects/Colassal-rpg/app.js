@@ -1,12 +1,8 @@
  var readline = require('readline-sync')
  var chalk = require('chalk')
+ var play = require('play');
 
- var loot = [{
-     Name: "Health potion",
-     Description: "Restores HP"
- },{ Name: 'AP Potion',
-    Description: "Restores AP"
- }]
+ var loot = ["Health Potion", 'AP Potion']
 
 var Inventory = []
 
@@ -31,17 +27,25 @@ function charCreation(name,job,hp,ap){
 
 } 
 
-function enemies(title, hp, ap){
+
+
+function Enemies(title, hp, ap){
     this.title = title;
     this.hp = hp;
     this.ap = ap;
 }
 
-var bandit = new enemies('bandit', 100, 100)
-var ogre = new enemies('ogre', 100, 100)
-var witch = new enemies('witch', 100, 100)
+var bandit = new Enemies('Bandit:', 100, 100)
+var ogre = new Enemies('Ogre:', 100, 100)
+var witch = new Enemies('Witch:', 100, 100)
+var darkWizard = new Enemies('Dark Wizard:', 100, 100)
+var cannibal = new Enemies('Cannibal:', 100, 100)
 
-var ene = [bandit,ogre,witch]
+
+var ene = [bandit,ogre,witch,darkWizard,cannibal]
+
+var enemy;
+
 
 
 
@@ -57,10 +61,10 @@ if(answers == 0){
     var myCharacter = new charCreation(names, 'Hunter', 170, 140)
 } else if(answers == 2){
     console.log("\n(The old man bows to you) Tread carefully monk, this is not the monastary where you grew up")
-    var myCharacter = new charCreation(names, 'Monk', 220, 120)
+    var myCharacter = new charCreation(names, 'Monk', 20, 120)
 } else if(answers == 3){
     console.log("\nI see, Wizards are always in demand around here, though the king feels threatned by them")
-    var myCharacter = new charCreation(names, 'Wizard', 120, 230)
+    var myCharacter = new charCreation(names, 'Wizard', 150, 230)
 } else if(answers == 4){
     console.log("\nInteresting, I thought the remaining Witchhunters were killed in the Great hill massacare, blasted witches")
     var myCharacter = new charCreation(names, 'Witchhunter', 150, 200)
@@ -73,87 +77,81 @@ if(answers == 0){
 }
 
 console.log("\nWell im sure you can make your way around this city just fine, be sure to keep your guard up (The old man walks away)")
+console.log(myCharacter.name + " Class: " + myCharacter.job + " hp: " + myCharacter.hp + " Ap: " + myCharacter.ap)
 
- while(myCharacter.hp > 0){
+
+ while(myCharacter.hp > 0 || myCharacter.ap > 0){
     var moves = ['walk']
     var index = readline.keyInSelect(moves, chalk.blue("Shall we move foward? (Press w to walk)"))
             if(moves[index] = "walk"){
-                var random = Math.floor(Math.random()* 4 + 1)
+                var random = Math.floor(Math.random()* 3 + 1)
                 if(random === 1){
                      fight()
                 } else{
-                    walk()
                     console.log("No one has appeared")    
                 }
-            }else{
-                myCharacter.hp = 0
-}}
+            }
+            }
+ //die()
+//{break}
     
 
-walk()
-function walk(){
-    var moves = ['walk']
-    var index = readline.keyInSelect(moves, chalk.blue("Shall we move foward? (Press w to walk)"))
-        if(moves[index] = "walk"){
-            var random = Math.floor(Math.random()* 4 + 1)
-            if(random === 1){
-                 enemyCreation()
-                 fight()                                 
-                 enemyAttack()
-                
-               //this makes it break out of the loop
-            } else{
-                walk()
-            }
-        }else{
-            myCharacter.hp = 0
-            1
-        }
+// walk()
+// function walk(){
+//     var moves = [chalk.green('walk')]
+//     var index = readline.keyInSelect(moves, chalk.blue("Shall we move foward? (Press w to walk)"))
+//         if(moves[index] = "walk"){
+//             var random = Math.floor(Math.random()* 4 + 1)
+//             if(random === 1){
+//                  fight()
+//             } else{
+//                 walk()
+//             }
+//         }else{
+//             myCharacter.hp = 0
+//         }
 
 
-}
+//}
 
 function run(){
-    var random = Math.floor(Math.random()* 4 +1)
-    if (random === 4){
-        console.log('You ran away, coward!')
-            return walk()
-    }else{
-        console.log('nice')
-    }
+    
+        console.log('You ran away!')
 }
 
-
 function fight(){
+    enemy = ene[Math.floor(Math.random(ene) * ene.length)];
+    ene.splice(ene.indexOf(enemy), 1)
+    while(enemy.hp > 0 && enemy.ap > 0){
     var choices = ['Fight', 'Run','Inventory']
-    var kite = readline.keyInSelect(choices, "\nAn enemy appears from the shadow looking to take your life, do you fight?")
-    console.log(choices)   
+    var kite = readline.keyInSelect(choices, "\nAn enemy appears from the shadow looking to take your life, do you fight?")  
     if(choices[kite] === 'Fight'){
-                 enemyCreation()
-                 attackEnemy()
+                 console.log("\nPrepare for battle")               
+                 attackEnemy()                                 
                  enemyAttack()
-                 console.log(myCharacter.hp)
-                 console.log(enemyCreation())    
-            console.log("\nPrepare for battle")
-            }else if(choices[kite]==='run'){
-                function run(){
-                    var random = Math.floor(Math.random()* 5 +1)
-                    if (random === 4){
-                        console.log('You have Escaped')
-                        walk()
+                 console.log(myCharacter.name + " " + myCharacter.hp + "HP " + myCharacter.ap + "AP")
+                 console.log(enemy.title + " " + enemy.hp + "HP " + enemy.ap + "AP" )
+                 if(myCharacter.hp <= 0){
+                     die()
+                 }   
+            }else if(choices[kite]==='Run'){
+                    var random = Math.floor(Math.random()* 2 + 1)
+                    if (random === 1){
+                        {break; fight()}
+                        console.log('You have Escaped!')
                     }else{
                         console.log('Your Attempt at running failed')
                     }
-                }
-                
-            console.log("\nbad")
-        }else if(choices[kite]==='Use Potion'){
+        }else if(choices[kite]==='Inventory'){
             var inv = readline.keyInSelect(Inventory, 'Choose From your Inventory')
-                if(Inventory.name === 'Health Potion'){
+                if(Inventory[inv]=== 'Health Potion'){
                     myCharacter.hp + 50;
-        }       if(Inventory.name === 'AP Potion'){
+        }       if(Inventory[inv] === 'AP Potion'){
                     myCharacter.ap + 50;
         }}
+    } if(enemy.hp <= 0){
+        enemyDie()
+    }
     }
 
 
@@ -164,45 +162,45 @@ function fight(){
 
 
 function attackEnemy(){
-    var random1 = Math.floor(Math.random()* 3)
+    var random1 = Math.floor(Math.random()* 3) + 1
+    var random2 = Math.floor(Math.random()* 15 + 10)
      if (random1 === 2){
          console.log("\nYou have hit the enemy, it was super effective")
-         enemyCreation() - 10
+         enemy.hp -= random2
+         myCharacter.ap -= Math.floor(random2 / 5)
+         play.sound('Decapitation Head Fall Off-SoundBible.com-1529852007.wav')
      }else{
          console.log("\nYou Miss!")
-     }}
-
-console.log(attackEnemy())
-
+     }
+}
 
 
 function enemyAttack(){
-    random = Math.floor(Math.random()*1)
+    random = Math.floor(Math.random() * 4) + 1
+    random1 = Math.floor(Math.random() * 15 + 10)
         if(random === 1){
-        myCharacter.hp - 10
+        myCharacter.hp -= random1
+        enemy.ap -= Math.floor(random1 / 5)
+        play.sound('Swords_Collide-Sound_Explorer-2015600826.wav')
+        console.log("You've been hit")
         }else{
             console.log("They Miss")
         }
     }
 
 function die(){
-    if(myCharacter.hp = 0){
-        console.log("You are dead")
-    }
+        console.log("You are dead....GAME OVER")
+     play.sound('Demon_Your_Soul_is_mine-BlueMann-1903732045.wav')
+    
 }
 
 function enemyDie(){
-     var enemy = ene
-    if(enemy.hp = 0){
-        console.log(chalk.blue("\nEnemy defeated, you win"))
-        var ran = loot[Math.floor(Math.random() * loot.length)]
-            Inventory.push(ran)
-        return walk
-    }
-}
 
-function enemyCreation(){
-    var rand = ene[Math.floor(Math.random() * ene.length)];
-    var halo = rand.hp
-        return halo
-}
+        myCharacter.hp += 40;
+        myCharacter.ap += 30;
+        console.log(chalk.blue("\nEnemy defeated, you win"))
+         var ran = loot[Math.floor(Math.random() * loot.length)]
+         console.log(ran)
+            Inventory.push(ran)
+        play.sound('Short_triumphal_fanfare-John_Stracke-815794903.wav')
+    }
