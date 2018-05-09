@@ -129,7 +129,7 @@ function fight(){
                  console.log("\nPrepare for battle")               
                  attackEnemy()                                 
                  enemyAttack()
-                 console.log(myCharacter.name + " " + myCharacter.hp + "HP " + myCharacter.ap + "AP")
+                 console.log(myCharacter.name + ": " + myCharacter.hp + "HP " + myCharacter.ap + "AP")
                  console.log(enemy.title + " " + enemy.hp + "HP " + enemy.ap + "AP" )
                  if(myCharacter.hp <= 0){
                      die()

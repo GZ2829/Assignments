@@ -1,9 +1,18 @@
 var todou = 'https://api.vschool.io/greg28/todo';
 var display = document.getElementById('todos')
 
-var data = axios.get(todou).then(function(response){
-    displayData(response.data)
-})
+
+
+document.del.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    var del = document.del.Delete
+
+    axios.delete('https://api.vschool.io/greg28/todo' + del).then(function(response){
+        console.log('Succesfully Deleted')
+}).catch(function(error){
+    throw error
+})})
 
 // .then(function(response){
 //         console.log(response.data.filter(function(todo){
@@ -18,6 +27,10 @@ var data = axios.get(todou).then(function(response){
 // })
 
 // console.log(luke)
+
+var data = axios.get(todou).then(function(response){
+    displayData(response.data)
+})
 
 document.holy.addEventListener('submit',function(e){
     e.preventDefault();
@@ -40,6 +53,9 @@ function displayData(arr){
     if(arr.length){
         arr.map(function(todou){
 
+            var id = document.createElement('h3');
+            id.textContent = todou._id
+
             var title = document.createElement('h2');
             title.textContent = todou.title;
         
@@ -51,11 +67,13 @@ function displayData(arr){
 
             var input = document.createElement('input')
             input.type = "checkbox"
-
+            
             var image = document.createElement('img')
             image.src = todou.imgUrl;
 
+            
 
+            display.appendChild(id)
             display.appendChild(image)
             display.appendChild(input)
             display.appendChild(title);
