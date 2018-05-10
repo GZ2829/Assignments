@@ -2,14 +2,14 @@ const name = 'John'
 const age = 101  
 const pets = ["cat", "dog"]
 
-var petObjects = []
+const petObjects = []
 
-for (let i = 0; i < pets.length; i++){  
-  let pet = {type: pets[i]}
+for (var i = 0; i < pets.length; i++){  
+  var pet = {type: pets[i]}
   if (pets[i] === "cat"){
-    const name = "fluffy"
+    let name = "fluffy"
   } else {
-    const name = "spot"
+    let name = "spot"
   }
   pet.name = name
   petObjects.push(pet)

@@ -1,33 +1,6 @@
 var todou = 'https://api.vschool.io/greg28/todo';
 var display = document.getElementById('todos')
 
-
-
-document.del.addEventListener('submit', function(e){
-    e.preventDefault();
-
-    var del = document.del.Delete
-
-    axios.delete('https://api.vschool.io/greg28/todo' + del).then(function(response){
-        console.log('Succesfully Deleted')
-}).catch(function(error){
-    throw error
-})})
-
-// .then(function(response){
-//         console.log(response.data.filter(function(todo){
-//             console.log(todo)
-//         }))
-// })
-
-// var luke = axios.get('https://swapi.co/api/people/1').then(function(response){
-//         console.log(response.data)
-// }).catch(function(error){
-//     console.log(error)
-// })
-
-// console.log(luke)
-
 var data = axios.get(todou).then(function(response){
     displayData(response.data)
 })
@@ -39,7 +12,7 @@ document.holy.addEventListener('submit',function(e){
         title: document.holy.title.value,
         description: document.holy.description.value,
         price: document.holy.price.value,
-        image: document.holy.image.value
+        imgUrl: document.holy.image.value
     }
 
     axios.post(todou, doe).then(function(response){
@@ -47,13 +20,18 @@ document.holy.addEventListener('submit',function(e){
     })
 })
 
-
-
+function deleteTodo(id){
+    if(confirm('Are you sure you want to delete')){
+        axios.delete(todou + '/' + id).then(function(response){
+            console.log('Succesfully Deleted')
+            })
+        }
+}
 function displayData(arr){
     if(arr.length){
         arr.map(function(todou){
 
-            var id = document.createElement('h3');
+            var id = document.createElement('h5');
             id.textContent = todou._id
 
             var title = document.createElement('h2');
@@ -66,20 +44,25 @@ function displayData(arr){
             price.textContent = todou.price;
 
             var input = document.createElement('input')
-            input.type = "checkbox"
+            input.type = 'checkbox'
             
-            var image = document.createElement('img')
-            image.src = todou.imgUrl;
+            var img = document.createElement('img')
+            img.src = todou.imgUrl;
 
-            
+            var delet = document.createElement('button')
+            delet.textContent = 'DELETE';
+            delet.onclick = ()=> deleteTodo(todou._id)
+          
 
-            display.appendChild(id)
-            display.appendChild(image)
-            display.appendChild(input)
             display.appendChild(title);
             display.appendChild(description);
             display.appendChild(price);
+            display.appendChild(img);           
+            display.appendChild(delet);
+            display.appendChild(input);
+
 
         })
+
     }
 }

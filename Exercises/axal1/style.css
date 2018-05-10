@@ -1,0 +1,42 @@
+body{
+    background-color: cornflowerblue
+}
+
+
+
+
+#todos{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+
+#todos h2 {
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center
+}
+#todos img{
+    position: relative;
+    
+}
+
+#todos button{
+    position: relative;
+    width: 100px;
+    
+}
+
+#todos h6{
+    position: relative;
+    font-size: 30px;
+    
+
+}
+
+#todos h4{
+    position: relative;
+    
+}

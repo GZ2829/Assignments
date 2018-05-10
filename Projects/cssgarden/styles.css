@@ -1,0 +1,123 @@
+@font-face {
+    font-family: 'myFf';
+    src: url(julius-sans-one-v6-latin-regular.woff);
+}
+
+@font-face {
+    font-family: 'lib';
+    src: url(libre-baskerville-v5-latin-regular.woff);
+}
+
+p { 
+    margin-top: 10;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: justify;
+    font-family: 'lib';
+    font-size: .85em;
+    line-height: 2;
+    color: rgb(50, 80, 80)
+    
+}
+
+.preamble h3{
+    position: relative;
+    margin-left: 15%;
+    font-family: 'myFf';
+    color: rgb(50, 80, 80)
+}
+
+body{
+    background-color: white
+}
+
+.wrapper{
+    background: whitesmoke no-repeat top left;
+}
+
+header{
+    height: 150px;
+    text-align: center;
+    padding: 20px 0 70px 0;
+    background: url(huntington.jpg);
+    background-size: 100% 100%
+}
+
+header h1{
+    padding-top: 0;
+    padding-bottom: 5px;
+    border-bottom: none;
+    font-family: 'myFf';
+    font-size: 3.2em;
+    color: white;
+    text-transform: uppercase;
+}
+
+header h1 ::before{
+    background: url(enso.svg)
+}
+
+header h2{
+    color: white;
+    font-family: 'myFf'
+}
+
+
+
+
+
+
+@media (max-width: 480px){
+    body{
+        background-color: white;
+        line-height: 0.88889;
+    }
+    
+    .wrapper{
+        background: white no-repeat top left;
+        padding: 0%
+    }
+
+    header{
+        height: 130px;
+        width: 100vw;
+        text-align: center;
+        padding: 20px 0 70px 0;
+        background: url(huntington.jpg);
+        background-size: 100% 100%
+    }
+    }
+    
+    header h1{
+        padding-top: 0;
+        padding-bottom: 5px;
+        border-bottom: none;
+        font-family: 'myFf';
+        font-size: 2.5em;
+        color: white;
+        text-transform: uppercase;
+        
+    }
+    
+    .top{
+        display: block;
+    }
+    
+    .preamble h3{
+        margin-left: 5%;
+        font-family: 'myFf';
+        color: black
+    }
+
+    p { 
+        margin-top: 10;
+        margin-left: 10%;
+        margin-right: 10%;
+        text-align: justify;
+        font-family: 'lib';
+        font-size: .85em;
+        line-height: 2;
+        color: black
+        
+    }
+
