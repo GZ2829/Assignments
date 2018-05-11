@@ -8,6 +8,11 @@
     src: url(libre-baskerville-v5-latin-regular.woff);
 }
 
+@font-face{
+    font-family: 'verd';
+    src: url(verdemoderna.woff)
+}
+
 p { 
     margin-top: 10;
     margin-left: 10%;
@@ -20,49 +25,181 @@ p {
     
 }
 
-.preamble h3{
+ h3{
     position: relative;
-    margin-left: 15%;
+    margin-left: 10%;
     font-family: 'myFf';
     color: rgb(50, 80, 80)
 }
 
 body{
-    background-color: white
+    background-color: white;
+    margin: 0
 }
 
 .wrapper{
-    background: whitesmoke no-repeat top left;
+    background: url(contours-opaque.png);
+  
 }
 
-header{
-    height: 150px;
+.tophead element{
+    content: url(enso.svg);
+    height: 75px;
+    width: 75px;
+    position: relative;
+    right: 230px;
+    bottom: -60px;
+}
+
+.tophead{
+    height: 250px;
     text-align: center;
-    padding: 20px 0 70px 0;
+    padding: 0;
     background: url(huntington.jpg);
-    background-size: 100% 100%
+    background-size: cover;
+}    
+
+.header1{
+    background-image: url(contours-opaque.png);
+    background-repeat: repeat;
+    height: 100%;
+    background-attachment: fixed;
+
 }
 
-header h1{
+.header2{
+    background-image: url(gridlines.png);
+    background-repeat: repeat;
+    background-attachment: fixed;
+}
+
+.tophead h1{
     padding-top: 0;
     padding-bottom: 5px;
     border-bottom: none;
     font-family: 'myFf';
-    font-size: 3.2em;
+    font-size: 2.5em;
     color: white;
     text-transform: uppercase;
+    margin: 0
 }
 
-header h1 ::before{
-    background: url(enso.svg)
-}
-
-header h2{
+.tophead h2{
     color: white;
-    font-family: 'myFf'
+    font-family: 'myFf';
+    font-size: 2em
+}
+
+.participation{
+    background: rgba(138,188,159,0.5);
+    background-image: url(bamboo.png);
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-size: auto, auto, cover;
+}
+
+.part1{
+    background-image: url(contours-opaque.png);
+    background-repeat: repeat;
+}
+
+.part2{
+    background-image: url(gridlines.png);
+    background-repeat: repeat;
+    background-position: 100% 100%;
 }
 
 
+.amazon{
+    background-image: url(koi.jpg);
+    background-size: 100% 100%;
+    font-family: 'lib';
+    background-position: relative;
+    font-size: 2.5em;
+    
+}
+.amazon1{
+    background-image: url(contours-opaque.png);
+    background-repeat: repeat;
+    background-position: 2000px 2000px;
+    background-attachment: fixed;
+}
+
+.amazon2{
+    background-image: url(gridlines.png);
+    background-repeat: repeat;
+    background-position: 100% 100%;
+    background-attachment: fixed;
+}
+
+.amazon p{
+    font-family: 'lib';
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    font-size: 22px;
+}
+
+.footer{
+   background-color: #1a5952;
+   width: 100%;
+   height: 100px;
+   font-family: 'verd';
+   position: relative;
+
+}
+
+.footer p{
+    font-family: 'verd';
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 30px;
+    padding: 0;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.3)
+}
+
+.sidebar{
+    background: #edf4f0;
+    display: block;
+    box-sizing: border-box
+}
+
+.sidebar ul{
+    box-sizing: border-box;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    list-style-type: none;
+}
+
+.julia{
+    font-family: 'myFf';
+    margin-top: 10;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 400;
+    color: #49968e
+}
+
+.luke{
+    font-family: 'lib';
+    text-align: left;
+    font-size: 13px;
+    margin-bottom: 10;
+}
+
+.by{
+    font-family: 'lib';
+    margin: 0;
+    text-align: left;
+    font-size: 13px;
+    color: #c0cac3;
+    font-weight: 400;
+}
 
 
 
@@ -78,24 +215,26 @@ header h2{
         padding: 0%
     }
 
-    header{
+    .tophead{
         height: 130px;
         width: 100vw;
         text-align: center;
         padding: 20px 0 70px 0;
-        background: url(huntington.jpg);
+        background: url(contours-opaque.png), url(gridlines.png), url(huntington.jpg);
         background-size: 100% 100%
     }
-    }
     
-    header h1{
+    
+    .tophead h1{
         padding-top: 0;
         padding-bottom: 5px;
         border-bottom: none;
         font-family: 'myFf';
-        font-size: 2.5em;
+        font-size: 1.5em;
         color: white;
         text-transform: uppercase;
+        position: relative;
+        top: 0%
         
     }
     
@@ -103,7 +242,7 @@ header h2{
         display: block;
     }
     
-    .preamble h3{
+    h3{
         margin-left: 5%;
         font-family: 'myFf';
         color: black
@@ -121,3 +260,93 @@ header h2{
         
     }
 
+    .amazon p{
+        font-family: 'lib';
+        font-style: italic;
+        color: rgba(255, 255, 255, 0.3);
+        font-size: 20px;
+        
+    }
+
+    .footer span{
+        font-family: 'verd';
+        display: flex;
+        text-align: inherit;
+        align-items: inherit;
+        justify-content: space-around;
+        font-size: 40px;
+        position: relative;
+        top: -20%;
+        padding: 10;
+        margin-left: 10;
+        margin-right: 10;
+        color: rgba(255, 255, 255, 0.3)
+    }
+    .amazon1{
+        background-image: url(contours-opaque.png);
+        background-repeat: repeat;
+        background-attachment: fixed;
+        background-position: 100% 100%;
+        height: 250px;
+    }
+    
+    .amazon2{
+        background-image: url(gridlines.png);
+        background-repeat: repeat;
+        background-attachment: fixed;
+        height: 250px;
+    }
+
+    .part1{
+        background-image: url(contours-opaque.png);
+        background-repeat: repeat;
+        background-position: 100%
+    
+    }
+    
+    .part2{
+        background-image: url(gridlines.png);
+        background-repeat: repeat;
+        background-position: 100%;
+        
+    }
+    
+    .participation{
+        background: rgba(138,188,159,0.5);
+        background-image: url(bamboo.png);
+        background-repeat: repeat;
+        background-attachment: fixed;
+        background-size: auto, auto, cover;
+    }
+
+    .tophead element{
+        content: url(enso.svg);
+        height: 55px;
+        width: 55px;
+        position: relative;
+        bottom: 0%;
+        left: 0%
+    }
+    
+    .tophead h2{
+        color: white;
+        font-family: 'myFf';
+        font-size: 1em
+    }
+    .amazon{
+        background-image: url(koi.jpg);
+        background-size: 100% 100%;
+        font-family: 'lib';
+        background-position: relative;
+        font-size: 2.5em;
+        height: 250px;
+        
+    }
+
+
+
+
+
+
+
+}
