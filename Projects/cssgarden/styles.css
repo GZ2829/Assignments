@@ -78,7 +78,7 @@ body{
     padding-bottom: 5px;
     border-bottom: none;
     font-family: 'myFf';
-    font-size: 2.5em;
+    font-size: 36px;
     color: white;
     text-transform: uppercase;
     margin: 0
@@ -87,7 +87,7 @@ body{
 .tophead h2{
     color: white;
     font-family: 'myFf';
-    font-size: 2em
+    font-size: 16px
 }
 
 .participation{
@@ -167,10 +167,11 @@ body{
 
 .sidebar ul{
     box-sizing: border-box;
-    margin: 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
     list-style-type: none;
+    width: 100%;
+    padding: 0;
 }
 
 .julia{
@@ -179,10 +180,12 @@ body{
     margin-left: 0;
     margin-right: 0;
     margin-bottom: 0;
-    text-align: left;
+    text-align: inherit;
     font-size: 16px;
     font-weight: 400;
-    color: #49968e
+    color: #49968e;
+
+    
 }
 
 .luke{
@@ -190,6 +193,7 @@ body{
     text-align: left;
     font-size: 13px;
     margin-bottom: 10;
+    
 }
 
 .by{
@@ -199,10 +203,51 @@ body{
     font-size: 13px;
     color: #c0cac3;
     font-weight: 400;
+    margin-bottom: 10;
 }
 
+.res{
+    box-sizing: border-box;
+    display: grid;
 
+}
 
+.resources{
+    text-align: left;
+
+    margin: 10;
+    grid-template-columns: 1fr 1fr;
+    background: rgba(138,188,159,0.5);
+    background-image: url(bamboo.png);
+    font-family: 'myFf';
+    font-size: 16px;
+    color: #49968e;
+    border-bottom: solid 1px #a0b9ad;
+}
+
+.resources li{
+    text-align: left;
+    width: 50%;
+    padding: 1.0em 10%;
+    border-top: solid 1px #d9e3dc;
+}
+
+.nap{
+    text-align: left;
+    border-top: solid 1px #d9e3dc;
+    margin-left: 0;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.nap li{
+    position: relative;
+    left: 20px;
+    bottom: 17px;
+    margin-bottom: 14px;
+    border-bottom: solid 1px #a0b9ad;
+    border-bottom-width: 100%
+}
 
 @media (max-width: 480px){
     body{
@@ -343,8 +388,25 @@ body{
         
     }
 
+    .julia{
+        font-family: 'myFf';
+        margin-top: 10;
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 0;
+        text-align: left;
+        font-size: 16px;
+        font-weight: 400;
+        color: #49968e
+    }
 
-
+    .sidebar ul{
+        box-sizing: border-box;
+        margin: 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        list-style-type: none;
+    }
 
 
 
