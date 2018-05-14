@@ -1,0 +1,87 @@
+body{
+    margin: 0;
+}
+
+
+
+.wrapper{
+    margin-left: 0;
+    background-color: gray;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+    'bodywrap','bodywrap', 'bodywrap'
+    'navbar', 'bodywrap', 'bodywrap'
+    'navbar', 'bodywrap', 'bodywrap'
+
+}
+
+
+.title{
+    background-color: lightblue;
+    background: url(https://netoria.s3.amazonaws.com/6038/waves_cannon_07.jpg);
+    text-align: center;
+    position: relative;
+    height: 200px;
+}
+
+.title h1{
+    margin-top: 0;
+    margin-left: 0;
+    margin-bottom: 20;
+}
+
+.title h2{
+    margin-bottom: 0;
+    margin-top: 10;
+}
+
+.navbar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+    height: 100%;
+    background-position-y: 100%;
+    width: 300px;
+    font-size: 30px;
+    color: white
+    
+}
+
+.navbar img{
+    width: 250px;
+}
+
+.navbar span{
+    border: 5px white
+}
+
+.bodywrap{
+    display: grid;
+    height: 800px;
+   
+}
+
+
+.pic{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    height: 400px;
+    position: relative;
+    top: 10px;
+    left: 20px;
+    width: 86%;
+    height: 65%;
+
+}
+
+.about{
+    position: relative;
+    top: 2%;
+    line-height: 2.0em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 18px;
+    text-align: center
+}
