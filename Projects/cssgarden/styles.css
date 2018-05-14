@@ -412,3 +412,21 @@ body{
 
 
 }
+
+
+@media (min-width: 1130px){
+ .wrapper{
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr;
+     grid-template-areas: 
+     "top,top,top"
+     'su,su,na'
+     'pr,pr,na'
+     'pr,pr,na'
+ }
+
+
+
+
+
+}
