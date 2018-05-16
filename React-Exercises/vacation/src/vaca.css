@@ -1,0 +1,127 @@
+
+
+
+
+
+.spring{
+    background: linear-gradient(rgba(122, 204, 97, 0.5), rgba(152, 170, 70, 0.596)), url(https://images.unsplash.com/photo-1460650187103-27ccffa99afb?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7e4ab7a8126b901a7aea2555042edc2d&auto=format&fit=crop&w=889&q=80);
+    height: 500px;
+    width: 500px;
+    display: block;
+    margin-right: 0px;
+}
+
+.spring h1{
+    text-align: center;
+    color: lightgreen;
+    text-shadow: 2px 2px black;
+}
+
+.spring h2{
+    text-align: center;
+    color: lightblue;
+    text-shadow: 2px 2px black;
+    left: 0px;
+    font-style: italic
+}
+
+.spring p{
+    position: relative;
+    text-align: left;
+    bottom: -71%;
+    font-size: 25px;
+    font-style: italic
+}
+
+.winter{
+    background: linear-gradient(rgba(97, 204, 97, 0.5), rgba(152, 170, 70, 0.596)), url(https://images.unsplash.com/photo-1506117962896-bd5df57fbcdd?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bb10136bdfdf31b4a853b2854392a6b7&auto=format&fit=crop&w=1055&q=80);
+    height: 500px;
+    width: 500px;
+}
+
+
+.winter h1{
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px black;
+}
+
+.winter h2{
+    text-align: center;
+    color: lightblue;
+    text-shadow: 2px 2px black;
+    left: 0px;
+    font-style: italic
+}
+
+.winter p{
+    position: relative;
+    text-align: left;
+    bottom: -71%;
+    font-size: 25px;
+    font-style: italic
+}
+
+.fall{
+    background: url(https://images.unsplash.com/photo-1414788020357-3690cfdab669?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f0fa15699cb54c61b4fbd9313fb9f2e0&auto=format&fit=crop&w=1053&q=80);
+    background-position-x: 80%;
+    height: 500px;
+    width: 500px;
+
+}
+
+.fall h1{
+    text-align: center;
+    color: crimson;
+    text-shadow: 2px 2px black;
+}
+
+.fall h2{
+    text-align: center;
+    color: rgb(49, 128, 49);
+    text-shadow: 2px 2px black;
+    left: 0px;
+    font-style: italic
+}
+
+.fall p{
+    position: relative;
+    text-align: left;
+    bottom: -71%;
+    font-size: 25px;
+    font-style: italic;
+    color: blanchedalmond;
+    text-shadow: 2px 2px black;
+}
+
+.summer{
+    background: url(https://images.unsplash.com/photo-1418308050932-c56fa6e5b767?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a50834fac9c92987f1d5c7990dfd0687&auto=format&fit=crop&w=634&q=80);
+    background-position-x: 65%;
+    background-position-y: 67%;
+    height: 500px;
+    width: 500px;
+}
+
+.summer h1{
+    text-align: center;
+    color: darkcyan;
+    text-shadow: 2px 2px black;
+}
+
+.summer h2{
+    text-align: center;
+    color: rgb(49, 128, 49);
+    text-shadow: 2px 2px black;
+    left: 0px;
+    font-style: italic
+}
+
+.summer p{
+    position: relative;
+    text-align: left;
+    bottom: -71%;
+    font-size: 25px;
+    font-style: italic;
+    color: blanchedalmond;
+    text-shadow: 2px 2px black;
+}

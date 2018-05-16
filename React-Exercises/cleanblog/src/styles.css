@@ -1,0 +1,41 @@
+body{
+    margin: 0;
+}
+
+
+
+.nav{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    font-family: 'Open Sans Extrabold';
+    color: white;
+    margin-left: 10;
+    margin-right: 20;
+}
+
+.head{
+    background: linear-gradient(rgba(37, 37, 37, 0.438), rgba(51, 51, 50, 0.596)), url(https://blackrockdigital.github.io/startbootstrap-clean-blog/img/home-bg.jpg) no-repeat;
+    background-size: cover;
+    height: 550px;
+    background-position: bottom 40% center;
+}
+
+.head h1{
+    position: relative;
+    left: 34%;
+    top: 20%;
+    font-size: 60px;
+    color: white;
+    font-family: 'Open Sans Extrabold';
+
+}
+
+.head h2{
+    position: relative;
+    left: 35%;
+    top: 20%;
+    font-size: 20px;
+    color: white;
+    font-family: 'Open Sans Extrabold'; 
+}

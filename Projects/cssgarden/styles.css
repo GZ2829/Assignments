@@ -414,18 +414,163 @@ body{
 }
 
 
+
 @media (min-width: 1130px){
  .wrapper{
      display: grid;
      grid-template-columns: 1fr 1fr 1fr;
-     grid-template-areas: 
-     "top,top,top"
-     'su,su,na'
-     'pr,pr,na'
-     'pr,pr,na'
+     grid-auto-rows: 15%;
+
  }
+ .tophead element{
+    content: url(enso.svg);
+    height: 75px;
+    width: 75px;
+    position: relative;
+    right: 230px;
+    bottom: -60px;
+}
 
+.tophead{
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-area: 't';
+    height: 250px;
+    text-align: center;
+    padding: 0;
+    background: url(huntington.jpg);
+    background-size: cover;
+}    
 
+.header1{
+    background-image: url(contours-opaque.png);
+    background-repeat: repeat;
+    height: 100%;
+    background-attachment: fixed;
+
+}
+
+.summary{
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-area: 's';
+}
+
+.preamble{
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-area: 'p';
+}
+
+.m{
+    grid-row-start: 4;
+    grid-row-end: 5;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-area: 'm';
+}
+
+.header2{
+    background-image: url(gridlines.png);
+    background-repeat: repeat;
+    background-attachment: fixed;
+}
+
+.tophead h1{
+    padding-top: 0;
+    padding-bottom: 5px;
+    border-bottom: none;
+    font-family: 'myFf';
+    font-size: 36px;
+    color: white;
+    text-transform: uppercase;
+    margin: 0
+}
+
+.tophead h2{
+    color: white;
+    font-family: 'myFf';
+    font-size: 16px
+}
+
+.participation{
+    grid-area: 'pa';
+    background: rgba(138,188,159,0.5);
+    background-image: url(bamboo.png);
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-size: auto, auto, cover;
+}
+
+.part1{
+    background-image: url(contours-opaque.png);
+    background-repeat: repeat;
+}
+
+.part2{
+    background-image: url(gridlines.png);
+    background-repeat: repeat;
+    background-position: 100% 100%;
+}
+
+.requirements{
+    grid-area: 'r'
+}
+
+.amazon{
+    grid-area: 'a';
+    background-image: url(koi.jpg);
+    background-size: 100% 100%;
+    font-family: 'lib';
+    background-position: relative;
+    font-size: 2.5em;
+    
+}
+.amazon1{
+    background-image: url(contours-opaque.png);
+    background-repeat: repeat;
+    background-position: 2000px 2000px;
+    background-attachment: fixed;
+}
+
+.amazon2{
+    background-image: url(gridlines.png);
+    background-repeat: repeat;
+    background-position: 100% 100%;
+    background-attachment: fixed;
+}
+
+.amazon p{
+    font-family: 'lib';
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    font-size: 22px;
+}
+
+.footer{
+    grid-area: 'f';
+   background-color: #1a5952;
+   width: 100%;
+   height: 100px;
+   font-family: 'verd';
+   position: relative;
+
+}
+.nap{
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    text-align: left;
+    border-top: solid 1px #d9e3dc;
+    margin-left: 0;
+    box-sizing: border-box;
+    margin: 0;
+}
 
 
 

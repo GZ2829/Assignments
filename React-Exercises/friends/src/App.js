@@ -67,7 +67,7 @@ const App = () =>{
       ]
      
         
-)}) return(
+    return(
         <div>
             <FriendsList friends={friends} />
         </div>
