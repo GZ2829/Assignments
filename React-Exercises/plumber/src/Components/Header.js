@@ -1,9 +1,9 @@
-import React from 'react-dom';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-import './App.css'
+import '../App.css'
 
-const Navbar = () =>{
+const Header = () =>{
     return(
         <div className='navbar'>
             <Link to='/'>Home</Link>
@@ -14,5 +14,5 @@ const Navbar = () =>{
     )
 }
 
-export default Navbar;
+export default Header;
 
