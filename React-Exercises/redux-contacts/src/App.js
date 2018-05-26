@@ -4,6 +4,8 @@ import {connect} from 'react-redux'
 
 import { addContact } from './redux';
 
+import List from './List'
+
 class App extends Component {
   constructor(){
     super()
@@ -16,13 +18,14 @@ class App extends Component {
       }
     }
     this.handleChange=this.handleChange.bind(this)
+    this.handleSubmit=this.handleSubmit.bind(this)
   }
   handleChange(e){
     const {name, value} = e.target;
     this.setState(prevState => {
       return {
-        ...prevState.contact,
         contact: {
+          ...prevState.contact,
           [name]: value
         }
       }
@@ -37,6 +40,7 @@ class App extends Component {
 
 
   render() {
+    //console.log(this.props)
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
@@ -45,9 +49,12 @@ class App extends Component {
           <input type='text' value={this.state.contact.email} onChange={this.handleChange} name='email' placeholder='What is your email?'/>
           <button>Submit</button>
         </form>
+        <List />
       </div>
     );
   }
 }
 
-export default connect(state=>state, { addContact })(App);
+export default connect(state=>({contact: state}), { addContact })(App);
+
+

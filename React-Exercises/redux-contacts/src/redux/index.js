@@ -6,6 +6,11 @@ export function addContact(contact){
     }
 }
 
+export function removeContact(contact){
+        type: 'REMOVE_CONTACT',
+        contact
+}
+
 
 
 function reducer(prevState = { list: [] }, action){
@@ -14,6 +19,10 @@ function reducer(prevState = { list: [] }, action){
             return{
                list:[...prevState.list, action.contact] 
             }
+        case 'REMOVE_CONTACT':
+            return prevState.filter((contact, i)=> i !==action.index)  
+            default:
+                return prevState
     }
 }
 

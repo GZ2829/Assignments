@@ -9,7 +9,9 @@ import reducer from './redux'
 import App from './App';
 
 const store = createStore(reducer)
-
+store.subscribe(()=>{
+    console.log(store.getState())
+})
 ReactDOM.render(
 <Provider store={store}>
     <App />
