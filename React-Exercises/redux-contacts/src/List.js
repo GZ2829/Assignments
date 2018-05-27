@@ -13,7 +13,13 @@ class List extends Component{
      }   
     }
     render(){
-        const mac = contact.map()
+        const mac = props.list.map(data=>{
+            <div>
+                <h1>data.name</h1>
+                <h3>data.phone</h3>
+                <h3>data.email</h3>
+                </div>
+        })
     return(
         <div>
 
