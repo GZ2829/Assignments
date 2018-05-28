@@ -22,9 +22,9 @@ class List extends Component{
         })
     return(
         <div>
-
+          {mac}
         </div>
     )
 }}
 
-export default connect(state=>({contact: state}), (removeContact)) (List);
+export default connect(state=>({list: state}), (removeContact)) (List);
