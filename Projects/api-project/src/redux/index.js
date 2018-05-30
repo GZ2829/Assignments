@@ -38,18 +38,57 @@ export const getGlobalData = () => {
     }
 }
 
-const intialstate = {}
+export const addToPortfolio = coin => {
+    console.log(coin)
+    return{
+        type: "ADD_TO_PORTFOLIO",
+        coin
+    }
+
+}
+
+export const removeCoin = coin =>{
+    return{
+        type: "REMOVE_COIN",
+        coin
+    }
+}
+
+const intialstate = {
+    data: [],
+    global: [],
+    savedCoins: []
+}
 
 const reducer = (state = intialstate, action) => {
     switch (action.type) {
         case "GET_DATA":
             return {
+                ...state,
                 data: action.data
             }
         case "GET_GLOBAL_DATA":
             return {
+                ...state,
                 data1: action.data
             }
+        case "ADD_TO_PORTFOLIO":
+            let arr = []
+            if(state.savedCoins.findIndex(item => item.id === action.coin.id) === -1){
+                arr = [...state.savedCoins, action.coin]
+            } else{
+                arr = [...state.savedCoins]
+            }
+            return{
+                ...state,
+                savedCoins: arr
+            }
+
+        case "REMOVE_COIN":
+            return{
+                ...state,
+                 savedCoins: state.savedCoins.filter((coin,id)=>coin.id !== action.coin.id)
+            }    
         default:
             return state
     }
