@@ -22,7 +22,7 @@ class MyPortfolio extends Component{
                 <div className={holder.quotes.USD.percent_change_24h > 0.00 ? 'ticker1': 'ticker2'} key={holder.id}>
                     <h1 className='head'>{holder.name}</h1>
                     <h2 className='tick'>Ticker: {holder.symbol}</h2>
-                    <h3 className='rank'>Rank: {holder.rank}</h3>
+                    <h2 className='rank'>Rank: {holder.rank}</h2>
                     <p className='total'>Total Supply: {holder.total_supply}</p>
                     <p className='max'>Max Supply: {holder.max_supply}</p>
                     <p className='price'>Price in USD: {holder.quotes.USD.price}</p>

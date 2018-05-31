@@ -12,7 +12,7 @@ function convertToArr(coinsObj){
 
 export const getData = () => {
     return dispatch => {
-        axios.get('https://api.coinmarketcap.com/v2/ticker/?limit=20').then(response => {
+        axios.get('https://api.coinmarketcap.com/v2/ticker/?limit=100').then(response => {
             const coins = response.data.data;
             
             dispatch({
@@ -28,6 +28,7 @@ export const getData = () => {
 export const getGlobalData = () => {
     return dispatch => {
         axios.get('https://api.coinmarketcap.com/v2/global/?convert=USD').then(response => {
+            
             dispatch({
                 type: "GET_GLOBAL_DATA",
                 data: response.data
@@ -39,7 +40,6 @@ export const getGlobalData = () => {
 }
 
 export const addToPortfolio = coin => {
-    console.log(coin)
     return{
         type: "ADD_TO_PORTFOLIO",
         coin
@@ -56,7 +56,13 @@ export const removeCoin = coin =>{
 
 const intialstate = {
     data: [],
-    global: [],
+    global: {
+        data: {
+            quotes: {
+                USD: {}
+            }
+        } 
+    },
     savedCoins: []
 }
 
@@ -70,7 +76,7 @@ const reducer = (state = intialstate, action) => {
         case "GET_GLOBAL_DATA":
             return {
                 ...state,
-                data1: action.data
+                global: action.data
             }
         case "ADD_TO_PORTFOLIO":
             let arr = []
@@ -88,7 +94,7 @@ const reducer = (state = intialstate, action) => {
             return{
                 ...state,
                  savedCoins: state.savedCoins.filter((coin,id)=>coin.id !== action.coin.id)
-            }    
+            }     
         default:
             return state
     }

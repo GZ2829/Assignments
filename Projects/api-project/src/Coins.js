@@ -3,10 +3,30 @@ import { connect } from 'react-redux'
 import { getData } from './redux'
 import { addToPortfolio } from './redux'
 import Navbar from './Navbar'
+import { getGlobalData } from './redux'
 
 import './App.css'
 
 class Coins extends Component {
+    constructor(){
+        super()
+       
+       this.state={
+           input: ''
+       }
+      this.handleChange = this.handleChange.bind(this)
+      this.handleSubmit = this.handleSubmit.bind(this)
+
+    }
+
+    handleChange(e){
+        const val=e.target.value
+        this.setState(prevState=>{
+            return{
+                input: val.toUpperCase()
+            }
+        })
+    }
 
     handleSubmit = coin =>{
         this.props.addToPortfolio(coin)
@@ -14,12 +34,17 @@ class Coins extends Component {
 
     componentDidMount(){
         this.props.getData()
+        this.props.getGlobalData()
     }
     render() {
-
-        const mapped = this.props.data && this.props.data
+          const mapped = this.props.data && this.props.data
         .sort((a, b) => {
             return a.rank - b.rank
+        }).filter(coins=>{
+                const coi=coins.name.toUpperCase()
+            if(coi.slice(0, this.state.input.length)===this.state.input){
+                return coins
+            }
         })
         .map(key=>{
             return(
@@ -41,7 +66,16 @@ class Coins extends Component {
         })
       return (
           <div>
-          <Navbar/>    
+          <Navbar/>
+          <div className='global'>
+            <h1>Global Data</h1>
+            <h2 className='coi'>Active Coins: {this.props.global.data.active_cryptocurrencies}</h2>
+            <h2 className='mar'>Active Markets: {this.props.global.data.active_markets}</h2>
+            <h3 className='bit'>Bitcoin % Of Market: {this.props.global.data.bitcoin_percentage_of_market_cap}</h3>
+            <h3 className='cap'>Total Market Cap USD: {this.props.global.data.quotes.USD.total_market_cap}</h3>
+            <h3 className='vol'>24hr Volume USD: {this.props.global.data.quotes.USD.total_volume_24h}</h3>
+            <input className='tic' type='text' onChange={this.handleChange} placeholder="SEARCH BY NAME" name='input' value={this.state.input}/>
+           </div>
         <div className="coins">
          {mapped}
         </div>
@@ -51,4 +85,5 @@ class Coins extends Component {
   }
 
 
-export default  connect(state => state, {getData, addToPortfolio} )(Coins);
+
+export default  connect(state => state, {getData, addToPortfolio, getGlobalData} )(Coins);

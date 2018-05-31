@@ -3,7 +3,6 @@ import {Switch, Route} from 'react-router-dom'
 import Home from './Home'
 import Coins from './Coins'
 import MyPortfolio from './MyPortfolio'
-import Navbar from './Navbar'
 import Footer from './Footer'
 import './App.css';
 
@@ -11,7 +10,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {/* <Navbar/> */}
           <Switch>
             <Route exact path ='/' component={ Home }/>
             <Route path='/coins' component={ Coins } />
