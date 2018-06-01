@@ -4,6 +4,8 @@ import { getData } from './redux'
 import { addToPortfolio } from './redux'
 import Navbar from './Navbar'
 import { getGlobalData } from './redux'
+// import { store } from './redux'
+// import { render } from 'react-dom'
 
 import './App.css'
 
@@ -48,18 +50,18 @@ class Coins extends Component {
         })
         .map(key=>{
             return(
-                <div className={key.quotes.USD.percent_change_7d > 0.00 ? 'ticker1': 'ticker2'} key={key.id} >
+                <div className='ticker1' key={key.id} >
                     <h1 className='head'>{key.name}</h1>
                     <h2 className='tick'>Ticker: {key.symbol}</h2>
                     <h2 className='rank'>Rank: {key.rank}</h2>
-                    <p className='total'>Total Supply: {key.total_supply}</p>
+                    <p className='total'>Total Supply: {key.total_supply.toLocaleString()}</p>
                     <p className='max'>Max Supply: {key.max_supply}</p>
                     <p className='price'>Price in USD: {key.quotes.USD.price}</p>
-                    <p className='v24'>24hr Volume: {key.quotes.USD.volume_24h}</p>
-                    <p className='market'>Market Cap: {key.quotes.USD.market_cap}</p>
-                    <p className='hr1'>1hr % change: {key.quotes.USD.percent_change_1h}</p>
-                    <p className='change24'>24hr % change: {key.quotes.USD.percent_change_24h}</p>
-                    <p className='change7'>7 day % change: {key.quotes.USD.percent_change_7d}</p>
+                    <p className='v24'>24hr Volume: {key.quotes.USD.volume_24h.toLocaleString()}</p>
+                    <p className='market'>Market Cap: {key.quotes.USD.market_cap.toLocaleString()}</p>
+                    <p className='hr1' style={{color: key.quotes.USD.percent_change_1h >= 0.00 ? 'rgb(60, 255, 76)' : 'rgb(255, 85, 85)' }}> 1hr % change: {key.quotes.USD.percent_change_1h} %</p>
+                    <p className='change24' style={{color: key.quotes.USD.percent_change_24h >= 0.00 ? 'rgb(60, 255, 76)' : 'rgb(255, 85, 85)'}}>24hr % change: {key.quotes.USD.percent_change_24h} %</p>
+                    <p className='change7' style={{color: key.quotes.USD.percent_change_7d >= 0.00 ? 'rgb(60, 255, 76)' : 'rgb(255, 85, 85)'}}>7 day % change: {key.quotes.USD.percent_change_7d} %</p>
                     <button className='but' onClick={(e)=> this.handleSubmit(key)}>Add To Portfolio</button>
                 </div>
             )

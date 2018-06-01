@@ -1,6 +1,11 @@
 import {createStore,applyMiddleware} from 'redux'
 import thunk from 'redux-thunk'
 import axios from 'axios'
+import { persistStore, persistReducer } from 'redux-persist'
+import storage from 'redux-persist/lib/storage';
+import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
+import storageSession from 'redux-persist/lib/storage/session'
+
 
 function convertToArr(coinsObj){
     const newArr = []
@@ -100,6 +105,23 @@ const reducer = (state = intialstate, action) => {
     }
 }
 
-const store = createStore(reducer, applyMiddleware(thunk))
+const persistConfig = {
+    key: 'root',
+    storage: storage,
+    stateReconciler: autoMergeLevel2
+};
 
-export default store
+
+//export const store = createStore(reducer, applyMiddleware(thunk))
+
+export default () =>{
+    const store = createStore(persistReducer(persistConfig, reducer), applyMiddleware(thunk));
+    const persistor = persistStore(store, [intialstate])
+    return { store, persistor}
+
+}
+//  const store = createStore(persistReducer(persistConfig, reducer));
+// const persistor = persistStore(store [{}, applyMiddleware(thunk)])
+
+// export default persistor;
+
