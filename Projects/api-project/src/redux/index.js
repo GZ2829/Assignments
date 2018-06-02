@@ -4,7 +4,7 @@ import axios from 'axios'
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage';
 import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
-import storageSession from 'redux-persist/lib/storage/session'
+// import storageSession from 'redux-persist/lib/storage/session'
 
 
 function convertToArr(coinsObj){
@@ -59,6 +59,15 @@ export const removeCoin = coin =>{
     }
 }
 
+export const calcTotal = (num1, num2, holder) =>{
+    return{
+        type: "CALC_TOTAL",
+        num1,
+        num2,
+        holder
+    }
+}
+
 const intialstate = {
     data: [],
     global: {
@@ -68,8 +77,20 @@ const intialstate = {
             }
         } 
     },
-    savedCoins: []
+    savedCoins: [{totalNum: 0}],
+        num1: 0,
+        num2: 0,
+        num3: 0,  
+        num4: 0,
+        //totalNum: 0
 }
+            const tot = (n1,n2,hold) =>{
+            hold=hold.quotes.USD.price
+            intialstate.num3 = n1 * n2
+            intialstate.num4 = n1 * hold
+            intialstate.totalNum = intialstate.num4 - intialstate.num3
+            return(intialstate.totalNum)
+            }
 
 const reducer = (state = intialstate, action) => {
     switch (action.type) {
@@ -99,7 +120,13 @@ const reducer = (state = intialstate, action) => {
             return{
                 ...state,
                  savedCoins: state.savedCoins.filter((coin,id)=>coin.id !== action.coin.id)
-            }     
+            }
+        case "CALC_TOTAL":
+            console.log(action.num1)
+            return{
+                ...state, 
+                  totalNum: tot(action.num1,action.num2, action.holder)
+            }         
         default:
             return state
     }

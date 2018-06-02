@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import  { removeCoin }  from './redux'
 import Navbar from './Navbar'
+import { calcTotal } from './redux'
 
 
 class MyPortfolio extends Component{
@@ -14,33 +15,39 @@ class MyPortfolio extends Component{
         num3: 0,  
         num4: 0,
         totalNum: 0
-      }  
+      }
+      this.handleChange=this.handleChange.bind(this)
+      this.handleSubmit=this.handleSubmit.bind(this)
+      this.handleSubmit1=this.handleSubmit1.bind(this)  
     }
 
     handleChange(e){
-         const crape =e.target.value
-        this.setState= prevState =>{
+         const { name, value } = e.target;
+        this.setState(prevState =>{
             return{
-                input: crape
+                [name]: value
             }
-        }
+            
+        })
     }
 
     handleSubmit(coin){
            this.props.removeCoin(coin)
     }
 
-    render(){
-          function gainOrLoss(nu1, nu2, holder){
-            nu1='num1'.value
-            nu2='num2'.value
-            this.state.num3 = 'num1'.value * 'num2'.value
-            this.state.num4 = this.state.num1 * holder.quotes.USD.price
-            this.state.totalNum = this.state.num3 - this.state.num4
-            return(this.state.totalNum)
-        }  
+    handleSubmit1(num1,num2,hold){
+        return(
+          this.props.calcTotal(num1, num2, hold)
+        )
+    }
 
-        const port = this.props.savedCoins && this.props.savedCoins.map(holder=>{
+    render(){
+        const port = this.props.data && this.props.data.filter(coin=>{
+                for(var i=0; i<this.props.savedCoins.length; i++){
+                    if(coin.id === this.props.savedCoins[i].id){
+                        return true
+                    }
+                }}).map(holder=>{
             return(
                 <div className='ticker1' key={holder.id}>
                     <h1 className='head'>{holder.name}</h1>
@@ -55,10 +62,11 @@ class MyPortfolio extends Component{
                     <p className='change24' style={{color: holder.quotes.USD.percent_change_24h >= 0.00 ? 'rgb(60, 255, 76)' : 'rgb(255, 85, 85)'}}>24hr % change: {holder.quotes.USD.percent_change_24h}</p>
                     <p className='change7' style={{color: holder.quotes.USD.percent_change_7d >= 0.00 ? 'rgb(60, 255, 76)' : 'rgb(255, 85, 85)'}}>7 day % change: {holder.quotes.USD.percent_change_7d}</p>
                     <div>
-                    <form onSubmit={gainOrLoss(this.state.num1,this.state.num2,holder)}>
+                    <form onClick={()=>this.handleSubmit1(this.state.num1, this.state.num2, holder)}>
                     <input type='number' name='num1' onChange={this.handleChange} placeholder="Amount Of Coins" value={this.state.num1}/>
                     <input type='number' name='num2' onChange={this.handleChange} placeholder='Price?' value={this.state.num2}/>
                     <button>Calculate</button>
+                    <p value={this.props.totalNum > 0 ? `You have gained: ${this.props.savedCoins.totalNum}` : `You have lost: ${this.props.totalNum}`}>{Math.floor(this.props.totalNum)}</p>
                     </form>
                     </div>
                     <button className='but' onClick={(e)=>this.handleSubmit(holder)}>Remove Coin</button>
@@ -76,4 +84,5 @@ class MyPortfolio extends Component{
 }}
 
 
-export default connect(state=> state ,{removeCoin} )  (MyPortfolio);
+
+export default connect(state=> state ,{removeCoin, calcTotal} )  (MyPortfolio);

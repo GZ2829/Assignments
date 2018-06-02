@@ -5,10 +5,10 @@ import Coins from './Coins'
 import MyPortfolio from './MyPortfolio'
 import Footer from './Footer'
 import './App.css';
-import configureStore from './redux'
+// import configureStore from './redux'
 
 
-const  {store} = configureStore()  
+// const  {store} = configureStore()  
 
 class App extends Component {
   render() {

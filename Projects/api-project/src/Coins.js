@@ -73,7 +73,7 @@ class Coins extends Component {
             <h1>Global Data</h1>
             <h2 className='coi'>Active Coins: {this.props.global.data.active_cryptocurrencies}</h2>
             <h2 className='mar'>Active Markets: {this.props.global.data.active_markets}</h2>
-            <h3 className='bit'>Bitcoin % Of Market: {this.props.global.data.bitcoin_percentage_of_market_cap}</h3>
+            <h3 className='bit'>Bitcoin % Of Market: {this.props.global.data.bitcoin_percentage_of_market_cap}%</h3>
             <h3 className='cap'>Total Market Cap USD: {this.props.global.data.quotes.USD.total_market_cap}</h3>
             <h3 className='vol'>24hr Volume USD: {this.props.global.data.quotes.USD.total_volume_24h}</h3>
             <input className='tic' type='text' onChange={this.handleChange} placeholder="SEARCH BY NAME" name='input' value={this.state.input}/>
