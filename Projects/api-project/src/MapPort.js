@@ -40,17 +40,18 @@ class MapPort extends Component {
     }
 
     render() {
+        console.log(this.props.totalNum)
         const { holder } = this.props
         return (
             <div className='ticker2' key={holder.id} onChange={this.handleChange}>
                 <h1 className='head'>{holder.name}</h1>
                 <h2 className='tick'>Ticker: {holder.symbol}</h2>
                 <h2 className='rank'>Rank: {holder.rank}</h2>
-                <p className='total'>Total Supply: {holder.total_supply}</p>
+                <p className='total'>Total Supply: {holder.total_supply.toLocaleString()}</p>
                 <p className='max'>Max Supply: {holder.max_supply}</p>
                 <p className='price'>Price in USD: {holder.quotes.USD.price}</p>
-                <p className='v24'>24hr Volume: {holder.quotes.USD.volume_24h}</p>
-                <p className='market'>Market Cap: {holder.quotes.USD.market_cap}</p>
+                <p className='v24'>24hr Volume: {holder.quotes.USD.volume_24h.toLocaleString()}</p>
+                <p className='market'>Market Cap: {holder.quotes.USD.market_cap.toLocaleString()}</p>
                 <p className='hr1' style={{ color: holder.quotes.USD.percent_change_1h >= 0.00 ? 'rgb(60, 255, 76)' : 'rgb(255, 85, 85)' }}>1hr % change: {holder.quotes.USD.percent_change_1h}</p>
                 <p className='change24' style={{ color: holder.quotes.USD.percent_change_24h >= 0.00 ? 'rgb(60, 255, 76)' : 'rgb(255, 85, 85)' }}>24hr % change: {holder.quotes.USD.percent_change_24h}</p>
                 <p className='change7' style={{ color: holder.quotes.USD.percent_change_7d >= 0.00 ? 'rgb(60, 255, 76)' : 'rgb(255, 85, 85)' }}>7 day % change: {holder.quotes.USD.percent_change_7d}</p>

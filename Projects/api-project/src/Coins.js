@@ -4,8 +4,7 @@ import { getData } from './redux'
 import { addToPortfolio } from './redux'
 import Navbar from './Navbar'
 import { getGlobalData } from './redux'
-// import { store } from './redux'
-// import { render } from 'react-dom'
+
 
 import './App.css'
 
@@ -56,9 +55,9 @@ class Coins extends Component {
                         <h2 className='rank'>Rank: {key.rank}</h2>
                         <p className='total'>Total Supply: {key.total_supply.toLocaleString()}</p>
                         <p className='max'>Max Supply: {key.max_supply}</p>
-                        <p className='price'>Price in USD: {key.quotes.USD.price}</p>
-                        <p className='v24'>24hr Volume: {key.quotes.USD.volume_24h.toLocaleString()}</p>
-                        <p className='market'>Market Cap: {key.quotes.USD.market_cap.toLocaleString()}</p>
+                        <p className='price'>Price in USD: ${key.quotes.USD.price}</p>
+                        <p className='v24'>24hr Volume: ${key.quotes.USD.volume_24h.toLocaleString()}</p>
+                        <p className='market'>Market Cap: ${key.quotes.USD.market_cap.toLocaleString()}</p>
                         <p className='hr1' style={{ color: key.quotes.USD.percent_change_1h >= 0.00 ? 'rgb(60, 255, 76)' : 'rgb(255, 85, 85)' }}> 1hr % change: {key.quotes.USD.percent_change_1h} %</p>
                         <p className='change24' style={{ color: key.quotes.USD.percent_change_24h >= 0.00 ? 'rgb(60, 255, 76)' : 'rgb(255, 85, 85)' }}>24hr % change: {key.quotes.USD.percent_change_24h} %</p>
                         <p className='change7' style={{ color: key.quotes.USD.percent_change_7d >= 0.00 ? 'rgb(60, 255, 76)' : 'rgb(255, 85, 85)' }}>7 day % change: {key.quotes.USD.percent_change_7d} %</p>

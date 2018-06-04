@@ -81,8 +81,11 @@ const intialstate = {
     savedCoins: [],
     num1: 0,
     num2: 0,
-    totalNum: {}
-}
+    totalNum: {
+        id: {}
+    }
+    }
+
 const tot = (n1, n2, hold) => {
     hold = hold.quotes.USD.price
     let n3 = n1 * n2
@@ -125,10 +128,10 @@ const reducer = (state = intialstate, action) => {
                 ...state,
                 totalNum: {
                     ...state.totalNum,
-                    [id]: {
-                        value: action.value ? action.value : 0,
-                        num1: action.num1 ? action.num1 : 0,
-                        num2: action.num2 ? action.num2 : 0
+                    [action.holder.id]: {
+                        value:  action.value === 'null' ? 0 : action.value,
+                        num1: typeof action.num1 ==='undefined' ? 0 : action.num1,
+                        num2:  typeof action.num2 ==='undefined' ? 0 : action.num2 
                     },
                 },
             }

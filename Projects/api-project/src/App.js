@@ -15,7 +15,6 @@ class App extends Component {
           <Route path='/coins' component={Coins} />
           <Route path='/myportfolio' component={MyPortfolio} />
         </Switch>
-        <Footer />
       </div>
     );
   }
