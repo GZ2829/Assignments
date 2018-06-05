@@ -81,9 +81,7 @@ const intialstate = {
     savedCoins: [],
     num1: 0,
     num2: 0,
-    totalNum: {
-        id: {}
-    }
+    totalNum: {}
     }
 
 const tot = (n1, n2, hold) => {
@@ -128,7 +126,7 @@ const reducer = (state = intialstate, action) => {
                 ...state,
                 totalNum: {
                     ...state.totalNum,
-                    [action.holder.id]: {
+                    [id]: {
                         value:  action.value === 'null' ? 0 : action.value,
                         num1: typeof action.num1 ==='undefined' ? 0 : action.num1,
                         num2:  typeof action.num2 ==='undefined' ? 0 : action.num2 

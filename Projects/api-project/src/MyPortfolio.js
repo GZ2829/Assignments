@@ -9,8 +9,8 @@ import MapPort from './MapPort'
 class MyPortfolio extends Component {
     render() {
         const port = this.props.data && this.props.data.filter(coin => {
-            for (var i = 0; i < this.props.savedCoins.length; i++) {
-                if (coin.id === this.props.savedCoins[i].id) {
+            for(var i = 0; i < this.props.savedCoins.length; i++) {
+                if(coin.id === this.props.savedCoins[i].id) {
                     return true
                 }
             }
