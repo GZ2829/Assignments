@@ -1,4 +1,4 @@
-var submit= document.getElementById("subb")
+var submit = document.getElementById("subb")
 
 
 submit.addEventListener("click", total)
