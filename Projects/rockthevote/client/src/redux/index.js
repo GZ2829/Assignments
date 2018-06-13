@@ -16,5 +16,14 @@ export const getData = () =>{
     }
 }
 
+const reducer = (state = [], action) => {
+    switch(action.type){
+        case "GET_DATA":
+            return action.issues
+        default:
+            return state
+    }
+}
+
 
 export default createStore(reducer, applyMiddleware(thunk))

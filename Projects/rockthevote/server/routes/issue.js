@@ -27,10 +27,10 @@ issueRouter.post('/', (req,res)=>{
 })
 
 issueRouter.put('/:id', (req,res)=>{
-    Issue.put(
+    Issue.findByIdAndUpdate(
         {_id: req.params.id},
         req.body,
-        ({new: true}),
+        {new: true},
         (err, updatedIssue)=>{
             if (err) return res.status(500).send(err)
             return res.send(updatedIssue)

@@ -8,4 +8,8 @@ mongoose.connect('mongodb://localhost/taskmanager');
 app.use(bodyParser.json());
 app.use(morgan('dev'))
 
-app.use('')
+app.use('/issue', require('./routes/issue'));
+
+app.listen(6000, ()=>{
+    console.log('Its Running')
+})
