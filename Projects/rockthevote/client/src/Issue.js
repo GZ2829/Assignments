@@ -53,8 +53,8 @@ toggle(){
         <p>{this.props.counter}</p>
         <button>+</button>
         <button>-</button>
-        <button onClick={this.toggle}>Comment</button>
-        <button>edit</button>
+        <button>Comment</button>
+        <button onClick={this.toggle}>edit</button>
         <button>delete</button>
         {this.state.isToggled 
             ? <form onSubmit={ this.handleSubmit }>

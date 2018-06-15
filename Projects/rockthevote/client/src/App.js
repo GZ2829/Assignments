@@ -13,41 +13,11 @@ class App extends Component {
         description: '',
         isToggled: false
     }
-
-    this.handleChange = this.handleChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
-    this.toggle = this.toggle.bind(this)
-
     }
 
     componentDidMount(){
        this.props.getData()
   }
-  handleChange(e){
-    const { name, value } = e.target
-    this.setState({
-        [name]: value
-    })
-}
-
-handleSubmit(e){
-    e.preventDefault()
-    let newTodo = {
-            title: this.state.title,
-            description: this.state.description
-        }
-    this.props.editTodo( this.props._id, newTodo )
-    this.setState({ isToggled: false, title: '', description: '' })
-}
-
-toggle(){
-    this.setState(prevState => {
-        return {
-            isToggled: !prevState.isToggled
-        }
-    })
-}
-
 
     
   render() {
