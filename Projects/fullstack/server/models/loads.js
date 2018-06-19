@@ -3,13 +3,19 @@ var Schema = mongoose.Schema;
 
 
 const loadSchema = new Schema({
+    clientId: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    },
+    
     originCity: {
         type: String,
         required: true
     },
     originState: {
         type: String,
-        required: true
+        required: true,
+        enum: ['AL', 'AK', 'AR', 'AZ', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'],
     },
     destinationCity: {
         type: String,
@@ -17,21 +23,33 @@ const loadSchema = new Schema({
     },
     destinationState: {
         type: String,
-        required: true
+        required: true,
+        enum: ['AL', 'AK', 'AR', 'AZ', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'],
     },
-    typeOfTrailer:{
+    typeOfTrailers:{
         type: String,
         required: true
     },
     isPalletized:{
-        type: Boolean 
+        type: Boolean,
+        required: true, 
     },
-    needAssistanceLoading: {
-        type: Boolean
+    needAssistanceLoading:{
+        type: Boolean,
+        required: true
     },
     isGPSRequired: {
         type: Boolean,
         required: true
+    },
+    isRushed: {
+        type: Boolean,
+        required: true,
+    },
+    bids :{
+        type: Schema.Types,
+        ref: 'Bid'
     }
-
 })
+
+module.exports = mongoose.model('Load', loadSchema)

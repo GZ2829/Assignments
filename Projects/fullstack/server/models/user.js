@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-const userSchema = new Schema({
+const userSchema = new Schema ({
     email:{
         type: String,
         unique: true,
@@ -17,8 +17,26 @@ const userSchema = new Schema({
         required: true,
         enum: ['Carrier', 'Client', 'Admin'] 
     },
-    
+    loads: {
+         type: mongoose.Schema.Types,
+         ref: 'Load'
+    },
+    trucks: {
+        type: mongoose.Schema.Types,
+         ref: 'Truck'
+    },
+    dotNumber:{
+        type: String
+    },
+    mcNumber: {
+        type: String
+    },
+    trailers: {
+        type: mongoose.Schema.Types,
+        ref: 'Trailer'
+    }
+
 })
 
 
-module.exports = mongoose.model('Users', userSchema)
+module.exports = mongoose.model('User', userSchema)

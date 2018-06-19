@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom'
 import Home from './Home'
 import Coins from './Coins'
 import MyPortfolio from './MyPortfolio'
-import Footer from './Footer'
+
 import './App.css';
 
 class App extends Component {
