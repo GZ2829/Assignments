@@ -20,7 +20,7 @@ const truckSchema = new Schema({
     class:{
         type: String,
         required: true,
-        enum: ['class 1-3 (0-14,000lbs)', 'class 4-6 (14,000-26,000lbs)', 'class 7-8 (26,000-80,000lbs+)']
+        enum: ['Class 1-3 (0-14,000lbs)', 'Class 4-6 (14,000-26,000lbs)', 'Class 7-8 (26,000-80,000lbs+)']
     },
     amountOfTrucks:{
         type: Number,

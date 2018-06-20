@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import Homepage from './Homepage';
-import Header from './Header'
+import Homepage from './Components/Homepage';
+import Header from './Components/Header'
 import { Switch, Route } from 'react-router-dom'
 import Signup from './Signup';
-import Clientpage from './Clientpage';
-import Carrierpage from './Carrierpage';
-import Loadboard from './Loadboard'
+import Clientpage from './Components/Clientpage';
+import Carrierpage from './Components/Carrierpage';
+import Loadboard from './Components/Loadboard'
 
 
 const App =() => {
@@ -15,10 +15,10 @@ const App =() => {
       <Header/>
       <Switch>
           <Route exact path='/' component={Homepage}/>
-          <Route path='/signup' component={Signup}/>
+          <Route path='/loadboard' component={Loadboard}/>
           <Route path='/carrierpage' component={Carrierpage}/>
-          <Route path= '/clientpage' component={Clientpage}/>
-          <Route path= '/loadboard' component={Loadboard}/>
+          <Route path='/clientpage' component={Clientpage}/>
+          <Route path='/signup' component={Signup}/>
       </Switch>
       </div>
     );

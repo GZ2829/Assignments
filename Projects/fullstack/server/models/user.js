@@ -15,7 +15,14 @@ const userSchema = new Schema ({
     accountType: {
         type: String,
         required: true,
-        enum: ['Carrier', 'Client', 'Admin'] 
+        enum: ['Carrier', 'Client', 'Admin'],
+        default: 'Carrier'
+    },
+    company: {
+        type: String,
+    },
+    aboutYourself: {
+        type: String,
     },
     loads: {
          type: mongoose.Schema.Types,
