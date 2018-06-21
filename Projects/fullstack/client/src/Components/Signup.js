@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import '../App.css';
 
 
 
@@ -23,12 +23,10 @@ class Signup extends Component {
                     <input className='input' type='text' placeholder='MC Number'/>
                     <input className='aboutYourself' type='text' placeholder='About Yourself'/>
                     <p>Account Type</p>
-                    <div className='radio'>
-                    <input type='radio' id='client'/>
-                    <label for='client'>Client</label>
-                    <input type='radio' id='Carrier'/>
-                    <label for='Carrier'>Carrier</label>
-                    </div>
+                    <select>
+                        <option value='client'>Client</option>
+                        <option value="carrier">Carrier</option>
+                    </select>
                     <button className='signUpSubmit'>Submit</button>
                 </form>
             </div>

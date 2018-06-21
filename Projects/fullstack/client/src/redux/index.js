@@ -1,29 +1,17 @@
-import { createStore, applyMiddleware } from 'redux';
+import {combineReducers, createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk'
-import axios from 'axios'
+import bidReducer from './bids'
+import truckReducer from './trucks'
+import trailerReducer from './trailers'
+import userReducer from './user'
+import loadReducer from './loads'
 
 
-export const getLoadData = () =>{
-    return dispatch => {
-        axios.get('/loads').then(response => {
-            dispatch({
-                type: 'GET_LOAD_DATA',
-                loads: response.data
-            })
-        }).catch(err => {
-            console.log(err)
-        })
-    }
-}
-
-const reducer = (state = [], action) => {
-    switch(action.type){
-        case "GET_LOAD_DATA":
-            return action.loads
-        default:
-            return state
-    }
-}
+const reducer = combineReducers({
+    trucks: truckReducer,
+    trailers: trailerReducer,
+    loads: loadReducer
+})
 
 export default createStore(
     reducer,

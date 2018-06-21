@@ -7,6 +7,7 @@ class Carrierbar extends Component {
     render() {
       return (
         <div className='carrierbar'>
+        <h4>Welcome To Your Toolbox</h4>
             <Link to='/carrierpage/trucks'>Your Trucks</Link>
             <Link to='/carrierpage/trailers'>Your Trailers</Link>
             <Link to='/carrierpage/bids'>Your Bids</Link>

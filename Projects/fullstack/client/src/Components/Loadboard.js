@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { getLoadData } from '../redux'
+import { getLoadData } from '../redux/loads'
 import '../App.css';
 
 class Loadboard extends Component {
@@ -32,10 +32,12 @@ class Loadboard extends Component {
     return (
       <div className="loadboard">
         <h1>Load Board</h1>
+        <div className='loadboardtest'>
         {loads}
+        </div>
       </div>
     );
   }
 }
 
-export default connect(state=>({ loads: state }), { getLoadData })(Loadboard)
+export default connect(state=>({ loads: state.loads }), { getLoadData })(Loadboard)
