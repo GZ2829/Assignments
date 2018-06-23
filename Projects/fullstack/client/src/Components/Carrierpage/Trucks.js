@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { getTruckData, addTruck } from '../redux/trucks'
-import '../App.css';
+import { getTruckData, addTruck } from '../../redux/trucks'
+import Trucklist from './Trucklist'
+import '../../App.css';
 
 
 class Trucks extends Component {
@@ -12,10 +13,13 @@ class Trucks extends Component {
                 model: '',
                 year: 0,
                 amountOfTrucks: 0,
-                class: ''
+                class: '',
+                isToggled: false
+
             }
             this.addTrucks=this.addTrucks.bind(this)
             this.handleInputChange=this.handleInputChange.bind(this)
+            this.toggle = this.toggle.bind(this)
         }
 
         componentDidMount(){
@@ -39,17 +43,20 @@ class Trucks extends Component {
                 class: this.state.class
             })
         }
+        toggle(){
+            this.setState(prevState => {
+                return {
+                    isToggled: !prevState.isToggled
+                }
+            })
+        }
 
 
   render() {
+      console.log(this.props)
       const Vehicles=this.props.trucks.map(truck=>{
           return(
-              <div className='truck'>
-                  <h4>Make: {truck.make}</h4>
-                  <h4>Model: {truck.model}</h4>
-                  <h4>Year: {truck.year}</h4>
-                  <h4>Class: {truck.class}</h4>
-              </div>
+            <Trucklist id={truck._id} make={truck.make} model={truck.model} year={truck.year} amountOfTrucks={truck.amountOfTrucks} class={truck.class}/>
           )
       })
     return (

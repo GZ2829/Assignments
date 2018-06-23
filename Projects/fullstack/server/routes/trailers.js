@@ -18,6 +18,12 @@ trailerRouter.post('/', (req,res)=>{
         return res.status(201).send(newTruck)
     })
 })
+trailerRouter.put('/:id', (req,res)=>{
+Trailers.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updated)=>{
+    if (err) return res.status(500).send(err);
+    return res.status(201).send(updated)
+})
+})
 
 trailerRouter.delete('/:id', (req, res) =>{
     Trailers.findByIdAndRemove(req.params.id, (err,deleted)=>{

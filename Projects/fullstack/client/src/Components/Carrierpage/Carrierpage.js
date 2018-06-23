@@ -1,5 +1,5 @@
 import React from 'react';
-import '../App.css';
+import '../../App.css';
 import { Switch, Route } from 'react-router-dom'
 import Carrierbar from './Carrierbar';
 import Carrierloadboard from './Carrierloadboard';

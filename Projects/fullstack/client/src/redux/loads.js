@@ -13,7 +13,46 @@ export const getLoadData = () =>{
         })
     }
 }
+export const addLoad = addedLoad => {
+    return dispatch => {
+        axios.post("/loads", addedLoad).then(() => {
+            dispatch(getLoadData());
+        }).catch(err => {
+            console.log(err);
+        })
+    }
+}
 
+export const removeLoad = id => {
+    return dispatch => {
+        axios.delete(`/loads/${id}`).then(() => {
+            dispatch(getLoadData());
+        }).catch(err => {
+            console.log(err);
+        })
+    }
+}
+
+export const editLoad = (id, editedLoad) => {
+    const reduce = Object.keys(editedLoad).reduce((final, key)=>{
+            if(editedLoad[key]){
+                return{
+                    ...final,
+                    [key]: editedLoad[key]
+                }
+            } else{
+                return final
+            }
+    }, {})
+    console.log(reduce)
+    return dispatch => {
+        axios.put(`/loads/${id}`, reduce).then(() => {
+            dispatch(getLoadData());
+        }).catch(err => {
+            console.log(err);
+        })
+    }
+}
 
 
 

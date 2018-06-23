@@ -14,6 +14,40 @@ export const getTruckData =() =>{
         })
     }
 }
+
+
+
+export const editTruck = (id, editedTruck) => {
+    const reduce = Object.keys(editedTruck).reduce((final, key)=>{
+            if(editedTruck[key]){
+                return{
+                    ...final,
+                    [key]: editedTruck[key]
+                }
+            } else{
+                return final
+            }
+    }, {})
+    console.log(reduce)
+    return dispatch => {
+        axios.put(`/trucks/${id}`, reduce).then(() => {
+            dispatch(getTruckData());
+        }).catch(err => {
+            console.log(err);
+        })
+    }
+}
+
+
+export const removeTruck = id => {
+    return dispatch => {
+        axios.delete(`/trucks/${id}`).then(() => {
+            dispatch(getTruckData());
+        }).catch(err => {
+            console.log(err);
+        })
+    }
+}
 export const addTruck = addedTruck => {
     return dispatch => {
         axios.post("/trucks", addedTruck).then(() => {

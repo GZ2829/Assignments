@@ -4,8 +4,8 @@ import Homepage from './Components/Homepage';
 import Header from './Components/Header'
 import { Switch, Route } from 'react-router-dom'
 import Signup from './Components/Signup';
-import Clientpage from './Components/Clientpage';
-import Carrierpage from './Components/Carrierpage';
+import Clientpage from './Components/Clientpage/Clientpage';
+import Carrierpage from './Components/Carrierpage/Carrierpage';
 import Loadboard from './Components/Loadboard'
 
 

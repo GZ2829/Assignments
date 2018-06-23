@@ -10,9 +10,40 @@ export const getTrailerData = () =>{
         })
     }
 }
+
+export const editTrailer = (id, editedTrailer) => {
+    const reduce = Object.keys(editedTrailer).reduce((final, key)=>{
+            if(editedTrailer[key]){
+                return{
+                    ...final,
+                    [key]: editedTrailer[key]
+                }
+            } else{
+                return final
+            }
+    }, {})
+    console.log(reduce)
+    return dispatch => {
+        axios.put(`/trailers/${id}`, reduce).then(() => {
+            dispatch(getTrailerData());
+        }).catch(err => {
+            console.log(err);
+        })
+    }
+}
+
 export const addTrailer = addedTrailer => {
     return dispatch => {
         axios.post("/trailers", addedTrailer).then(() => {
+            dispatch(getTrailerData());
+        }).catch(err => {
+            console.log(err);
+        })
+    }
+}
+export const removeTrailer = id => {
+    return dispatch => {
+        axios.delete(`/trailers/${id}`).then(() => {
             dispatch(getTrailerData());
         }).catch(err => {
             console.log(err);

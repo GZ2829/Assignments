@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { getTrailerData, addTrailer } from '../redux/trailers'
-import '../App.css';
+import { getTrailerData, addTrailer } from '../../redux/trailers'
+import '../../App.css';
+import Trailerlist from './Trailerlist'
 
 class Trailer extends Component {
   constructor(){
@@ -44,14 +45,10 @@ class Trailer extends Component {
 
 
   render() {
-    console.log(this.props)
     const trailers=this.props.trailers.map(trailer=>{
       return(
-        <div className='loads'>
-          <h3>Type Of Trailer: {trailer.typeOfTrailer}</h3>
-          <h3>Year: {trailer.year}</h3>
-          <h4>Carrying Capacity In Lbs: {trailer.carryingCapacityInLbs}</h4>
-        </div>
+        <Trailerlist id={trailer._id} typeOfTrailer={trailer.typeOfTrailer} model={trailer.model} year={trailer.year} carryingCapacityInLbs={trailer.carryingCapacityInLbs} palletCapacity=
+        {trailer.palletCapacity} amountOfTrailers={trailer.amountOfTrailers} />
     )
     })
     return (

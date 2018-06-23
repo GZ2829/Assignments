@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { getLoadData } from '../redux/loads'
-import '../App.css';
+import { getLoadData } from '../../redux/loads'
+import '../../App.css';
 
 class Clientloadboard extends Component {
   constructor(){

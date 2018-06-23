@@ -1,14 +1,76 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
+import { editLoad, getLoadData, removeLoad } from '../redux/loads'
 import '../App.css';
 
-class Addaload extends Component {
+class Loadboarddiv extends Component {
+  constructor(){
+       super()
+
+    this.state = {
+        isToggled: false,
+        inputs:{
+            originCity: '',
+            originState: '',
+            destinationCity: '',
+            destinationState: '',
+            typeOfTrailers: '',
+            isPalletized: false,
+            needAssistanceLoading: false,
+            isGPSRequired: false,
+            isRushed: false,
+        }
+
+    }
+       this.handleInputChange=this.handleInputChange.bind(this)
+       this.toggle = this.toggle.bind(this)
+       this.deleteLoad = this.deleteLoad.bind(this)
+       this.editALoad=this.editALoad.bind(this)
+  }
+
+  componentDidMount(){
+    this.props.getLoadData()
+
+  }
+  toggle(){
+    this.setState(prevState => {
+        return {
+            isToggled: !prevState.isToggled
+        }
+    })
+}
+handleInputChange = event => {
+    const {name, value} = event.target;
+    this.setState(prevState=>({
+        inputs: {
+            ...prevState.inputs,
+            [name]: value
+        }
+    }))
+}
+deleteLoad(){
+    this.props.removeLoad(this.props.id)
+}
+
+editALoad(e){
+    e.preventDefault()
+   this.props.editLoad(this.props.id, this.state.inputs)
+}
+
+
   render() {
     return (
-    <div className='addaload'>
-    <h1>Add A Load</h1>
-      <form>
-          <input type='text' placeholder="Origin City"/>
-          <select>
+        <div className='loads'>
+        <h3>Origin: {this.props.originCity}, {this.props.originState}</h3>
+        <h3>Going To: {this.props.destinationCity}, {this.props.destinationState}</h3>
+        <h4>Trailers Needed: {this.props.typeOfTrailers}</h4>
+        <h5>In A Rush? {this.props.isRushed}</h5>
+        <button onClick={this.toggle}>Edit</button>
+        <button onClick={()=>this.deleteLoad(this.props.id)}>Delete</button>
+        {this.state.isToggled
+          ? <form onSubmit={this.editALoad}>
+          <input name='originCity' type='text' onChange={this.handleInputChange} value={this.state.inputs.originCity} placeholder="Origin City"/>
+          <select name='originState' onChange={this.handleInputChange} value={this.state.inputs.originState}>
               <option>Origin State</option>
               <option value='AL'>AL</option>
               <option value='AK'>AK</option>
@@ -61,8 +123,8 @@ class Addaload extends Component {
               <option value='WV'>WV</option>
               <option value='WY'>WY</option>
           </select>
-          <input type='text' placeholder='Destination City'/>
-          <select>
+          <input name='destinationCity' onChange={this.handleInputChange} type='text' value={this.state.inputs.destinationCity} placeholder='Destination City'/>
+          <select name='destinationState' onChange={this.handleInputChange} value={this.state.inputs.destinationState}>
               <option>Destination State</option>
               <option value='AL'>AL</option>
               <option value='AK'>AK</option>
@@ -115,32 +177,34 @@ class Addaload extends Component {
               <option value='WV'>WV</option>
               <option value='WY'>WY</option>
           </select>
-          <input type='text' placeholder="Type Of Trailers Needed"/>
-          <select>
+          <input name='typeOfTrailers' onChange={this.handleInputChange} value={this.state.inputs.typeOfTrailers} type='text' placeholder="Type Of Trailers Needed"/>
+          <select name='isPalletized' onChange={this.handleInputChange} value={this.state.inputs.isPalletized}>
               <option>Is Palletized?</option>
               <option value={true}>True</option>
               <option value={false}>False</option>
           </select>
-          <select>
+          <select name='needAssistanceLoading' onChange={this.handleInputChange} value={this.state.inputs.needAssistanceLoading}>
               <option>Need Loading Assistance?</option>
               <option value={true}>True</option>
               <option value={false}>False</option>
           </select>
-          <select>
+          <select name='isGPSRequired' onChange={this.handleInputChange} value={this.state.inputs.isGPSRequired}>
               <option>Is GPS Required?</option>
               <option value={true}>True</option>
               <option value={false}>False</option>
           </select>
-          <select>
+          <select name='isRushed' onChange={this.handleInputChange} value={this.state.inputs.isRushed}>
               <option>Need in a Rush?</option>
               <option value={true}>True</option>
               <option value={false}>False</option>
           </select>
           <button>Submit</button>
       </form>
-    </div>
+            : null
+            }
+      </div>
     );
   }
 }
 
-export default Addaload;
+export default connect(state=>({ loads: state.loads }), { editLoad, removeLoad, getLoadData })(Loadboarddiv)

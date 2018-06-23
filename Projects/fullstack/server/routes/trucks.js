@@ -1,6 +1,5 @@
 const express = require('express')
 const truckRouter = express.Router()
-const mongoose = require('mongoose')
 const Trucks = require('../models/trucks')
 
 
@@ -22,6 +21,13 @@ truckRouter.post('/', (req,res)=>{
     rucks.save((err, newTruck)=>{
         if (err) return res.status(500).send(err);
         return res.status(201).send(newTruck)
+    })
+})
+
+truckRouter.put('/:id', (req,res)=>{
+    Trucks.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updated)=>{
+        if (err) return res.status(500).send(err);
+        return res.status(201).send(updated)
     })
 })
 

@@ -1,6 +1,5 @@
 const express = require('express')
 const loadRouter = express.Router()
-const mongoose = require('mongoose')
 const Loads = require('../models/loads')
 
 loadRouter.get('/', (req,res)=>{
@@ -24,6 +23,14 @@ loadRouter.post('/', (req,res)=>{
         return res.status(201).send(newTruck)
     })
 })
+
+loadRouter.put('/:id', (req,res)=>{
+    Loads.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updated)=>{
+        if (err) return res.status(500).send(err);
+        return res.status(201).send(updated)
+    })
+})
+
 
 loadRouter.delete('/:id', (req, res) =>{
     Loads.findByIdAndRemove(req.params.id, (err,deleted)=>{
