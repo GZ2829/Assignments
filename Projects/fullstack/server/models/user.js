@@ -10,19 +10,17 @@ const userSchema = new Schema ({
     },
     password:{
         type: String,
-        required: true,
+        required: true
     },
     accountType: {
         type: String,
-        required: true,
-        enum: ['Carrier', 'Client', 'Admin'],
-        default: 'Carrier'
+        enum: ['Carrier', 'Client', 'Admin']
     },
     company: {
-        type: String,
+        type: String
     },
     aboutYourself: {
-        type: String,
+        type: String
     },
     loads: {
          type: mongoose.Schema.Types,
@@ -42,7 +40,6 @@ const userSchema = new Schema ({
         type: mongoose.Schema.Types,
         ref: 'Trailer'
     }
-
 })
 
 

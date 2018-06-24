@@ -6,8 +6,8 @@ class Homepage extends Component {
     return (
     <div className='homepage'>
       <div className='homepage1'><p>hello</p></div>
-      <div className='homepage2'>hello</div>
-      <div className='homepage3'>hello</div>
+      <div className='homepage2'><h1>Bringing you quality service at a upfront, reasonable price</h1></div>
+      <div className='homepage3'></div>
       <div className='homepage4'>hello</div>
     </div>
     );

@@ -1,6 +1,7 @@
 const express = require('express')
 const truckRouter = express.Router()
 const Trucks = require('../models/trucks')
+const checkAuth = require('../middleware/check-auth')
 
 
 truckRouter.get('/', (req,res)=>{
@@ -16,7 +17,7 @@ truckRouter.get('/:id', (req,res)=>{
     })
 })
 
-truckRouter.post('/', (req,res)=>{
+truckRouter.post('/', checkAuth, (req,res)=>{
     const rucks = Trucks(req.body);
     rucks.save((err, newTruck)=>{
         if (err) return res.status(500).send(err);
