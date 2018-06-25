@@ -2,15 +2,28 @@ import axios from 'axios'
 
 
 export const signup = newUser =>{
-        return dispatch =>{
+        return () =>{
             axios.post('/user/signup', newUser).then(response=>{
-                const {token, newUser} = response.data
-                dispatch(newUser, token)
-                localStorage.token = token
-                localStorage.user = newUser
+                console.log(response.data)
+                localStorage.token = response.data
+                localStorage.user = JSON.stringify(newUser)
             })
             .catch(err =>{
-                console.log(err)
+                console.error(err)
             })
         }
+}
+
+export function login(credentials) {  
+    return () => {
+        axios.post("/user/login", credentials)
+            .then(response => {
+                console.log(response.data)
+                localStorage.token = response.data.token
+                localStorage.user = JSON.stringify(response.data.user);
+            })
+            .catch((err) => {
+                console.error(err);
+            });
+    }
 }

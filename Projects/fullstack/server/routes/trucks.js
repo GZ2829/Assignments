@@ -17,7 +17,7 @@ truckRouter.get('/:id', (req,res)=>{
     })
 })
 
-truckRouter.post('/', checkAuth, (req,res)=>{
+truckRouter.post('/', (req,res)=>{
     const rucks = Trucks(req.body);
     rucks.save((err, newTruck)=>{
         if (err) return res.status(500).send(err);

@@ -12,10 +12,10 @@ class Trailerlist extends Component {
            inputs:{
             typeOfTrailer: '',
             model: '',
-            year: 0, 
-            carryingCapacityInLbs: 0,
-            palletCapacity: 0,
-            amountOfTrailers: 0
+            year: Number, 
+            carryingCapacityInLbs: Number,
+            palletCapacity: Number,
+            amountOfTrailers: Number
            }
 
         }
@@ -73,10 +73,10 @@ class Trailerlist extends Component {
           <h3>Year: {this.props.year}</h3>
           <h4>Carrying Capacity In Lbs: {this.props.carryingCapacityInLbs}</h4>
           <h4>Amount of Trailers: {this.props.amountOfTrailers}</h4>
-          <button onClick={this.toggle}>edit</button>
-          <button onClick={()=> this.handleDelete(this.props.id)}>Delete</button>
+          <button className='traileredit' onClick={this.toggle}>edit</button>
+          <button className='trailerdelete' onClick={()=> this.handleDelete(this.props.id)}>Delete</button>
           {this.state.isToggled 
-            ? <form onSubmit={this.handleSubmit}>
+            ? <form className='trailerform' onSubmit={this.handleSubmit}>
                 <input 
                     type="text"     
                     value={this.state.typeOfTrailer} 
@@ -88,21 +88,25 @@ class Trailerlist extends Component {
                     value={this.state.model} 
                     name="model" 
                     onChange={ this.handleInputChange }
-                    placeholder="model"/>
+                    placeholder="Model"/>
                 <input type='number'
                        value={this.state.year}
                        name='year'
-                       onChange={this.handleInputChange}/>
+                       onChange={this.handleInputChange}
+                       placeholder='Year'/>
                 <input type='number'  
                         name='carryingCapacityInLbs'
                         onChange={this.handleInputChange}
+                        placeholder='Carrying Capacity'
                         value={this.state.carryingCapacityInLbs}/>
                 <input type='number' 
                         name='palletCapacity'
+                        placeholder='Pallet Capacity'
                         value={this.state.palletCapacity}
                         onChange={this.handleInputChange}/>
                 <input  type='number'
                         name='amountOfTrailers'
+                        placeholder='Amount Of Trailers'
                         value={this.state.amountOfTrailers}
                         onChange={this.handleInputChange}/>
                     <button>Submit</button>

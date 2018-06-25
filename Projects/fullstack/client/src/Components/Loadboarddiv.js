@@ -15,10 +15,10 @@ class Loadboarddiv extends Component {
             destinationCity: '',
             destinationState: '',
             typeOfTrailers: '',
-            isPalletized: false,
-            needAssistanceLoading: false,
-            isGPSRequired: false,
-            isRushed: false,
+            isPalletized: Boolean,
+            needAssistanceLoading: Boolean,
+            isGPSRequired: Boolean,
+            isRushed: Boolean,
         }
 
     }
@@ -68,7 +68,7 @@ editALoad(e){
         <button onClick={this.toggle}>Edit</button>
         <button onClick={()=>this.deleteLoad(this.props.id)}>Delete</button>
         {this.state.isToggled
-          ? <form onSubmit={this.editALoad}>
+          ? <form className='loadboardDiv' onSubmit={this.editALoad}>
           <input name='originCity' type='text' onChange={this.handleInputChange} value={this.state.inputs.originCity} placeholder="Origin City"/>
           <select name='originState' onChange={this.handleInputChange} value={this.state.inputs.originState}>
               <option>Origin State</option>

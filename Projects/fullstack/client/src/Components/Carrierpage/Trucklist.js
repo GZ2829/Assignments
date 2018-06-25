@@ -10,8 +10,8 @@ class Trucklist extends Component {
             inputs:{
                 make: '',
                 model: '',
-                year: 0,
-                amountOfTrucks: 0,
+                year: Number,
+                amountOfTrucks: Number,
                 class: '',
                 isToggled: false,
             }
@@ -71,10 +71,10 @@ class Trucklist extends Component {
                   <h4>Model: {this.props.model}</h4>
                   <h4>Year: {this.props.year}</h4>
                   <h4>Class: {this.props.class}</h4>
-                  <button onClick={this.toggle}>edit</button>
-                  <button onClick={()=> this.handleDelete(this.props.id)}>Delete</button>
+                  <button className='trucksbutton' onClick={this.toggle}>edit</button>
+                  <button className='trucksbutton'onClick={()=> this.handleDelete(this.props.id)}>Delete</button>
                 {this.state.isToggled 
-                ? <form onSubmit={this.handleEdit} className='trailerEditForm' >
+                ? <form onSubmit={this.handleEdit} className='truckEditForm' >
                 <input 
                     type="text"     
                     value={this.state.inputs.make} 
@@ -90,16 +90,19 @@ class Trucklist extends Component {
                 <input type='number'
                        value={this.state.inputs.year}
                        name='year'
-                       onChange={this.handleInputChange}/>
+                       onChange={this.handleInputChange}
+                       placeholder='Year'/>
                 <input type='number'
                         onChange={this.handleInputChange}
                         value={this.state.inputs.amountOfTrucks}
+                        placeholder='Amount Of Trucks'
                         name='amountOfTrucks' />
-                <input type='text'  
-                        name='class'
-                        onChange={this.handleInputChange}
-                        value={this.state.inputs.class}/>
-                    <button>Submit</button>
+                <select name='class' onChange={this.handleInputChange} value={this.state.inputs.class}>
+                        <option value='Class 1-3 (0-14,000lbs)'>Class 1-3 (0-14,000lbs)</option>
+                        <option value='Class 4-6 (14,000-26,000lbs)'>Class 4-6 (14,000-26,000lbs)</option>
+                        <option value='Class 7-8 (26,000-80,000lbs+)'>Class 7-8 (26,000-80,000lbs+)</option>
+                 </select>
+                    <button className='truck1Submit'>Submit</button>
                 </form>
               : null
               }  

@@ -13,10 +13,10 @@ class Addaload extends Component {
             destinationCity: '',
             destinationState: '',
             typeOfTrailers: '',
-            isPalletized: false,
-            needAssistanceLoading: false,
-            isGPSRequired: false,
-            isRushed: false,
+            isPalletized: Boolean,
+            needAssistanceLoading: Boolean,
+            isGPSRequired: Boolean,
+            isRushed: Boolean,
 
         }
     

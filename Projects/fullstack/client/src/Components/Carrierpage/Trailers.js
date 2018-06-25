@@ -11,10 +11,10 @@ class Trailer extends Component {
     this.state = {
         typeOfTrailer: '',
         model: '',
-        year: 0, 
-        carryingCapacityInLbs: 0,
-        palletCapacity: 0,
-        amountOfTrailers: 0
+        year: Number, 
+        carryingCapacityInLbs: Number,
+        palletCapacity: Number,
+        amountOfTrailers: Number
 
     }
     this.handleInputChange= this.handleInputChange.bind(this)
@@ -54,7 +54,7 @@ class Trailer extends Component {
     return (
         <div className='trailers'>
         <h1>Add A Trailer</h1>
-        <form onSubmit={this.trailerPost}>
+        <form className='addATrailer' onSubmit={this.trailerPost}>
         <input type='text'   onChange={this.handleInputChange} placeholder='Type Of Trailer' name='typeOfTrailer' value ={this.state.typeOfTrailer}/>
         <input type='text'   onChange={this.handleInputChange} placeholder='Trailer Model' name='model' value={this.state.model}/>
         <input type='number' onChange={this.handleInputChange} placeholder='Trailer Year' name='year' value={this.state.year}/>

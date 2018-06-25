@@ -26,7 +26,7 @@ class Editaload extends Component {
     })
     return (
       <div className="editLoadboard">
-        <h1>Load Board</h1>
+        <h1>Edit Your Loads</h1>
         <div className='loadboardtest'>
         {loads}
         </div>

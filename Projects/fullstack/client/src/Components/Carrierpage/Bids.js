@@ -5,7 +5,7 @@ import '../../App.css';
 class Bids extends Component {
   render() {
     return (
-    <div className='editaload'>
+    <div className='yourBids'>
     </div>
     );
   }

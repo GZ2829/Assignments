@@ -11,8 +11,8 @@ class Trucks extends Component {
             this.state ={
                 make: '',
                 model: '',
-                year: 0,
-                amountOfTrucks: 0,
+                year: Number,
+                amountOfTrucks: Number,
                 class: '',
                 isToggled: false
 
@@ -62,7 +62,7 @@ class Trucks extends Component {
     return (
     <div className='trucks'>
     <h1>Add A Truck</h1>
-    <form onSubmit={this.addTrucks}>
+    <form className='truckform' onSubmit={this.addTrucks}>
        <input onChange={this.handleInputChange} name='make' value={this.state.make} type='text' placeholder='Make'/>
        <input onChange={this.handleInputChange} name='model' value={this.state.model} type='text' placeholder='Model'/>
        <input onChange={this.handleInputChange} name='year' value={this.state.year} type='number' placeholder='Year'/>
@@ -72,7 +72,7 @@ class Trucks extends Component {
            <option value='Class 4-6 (14,000-26,000lbs)'>Class 4-6 (14,000-26,000lbs)</option>
            <option value='Class 7-8 (26,000-80,000lbs+)'>Class 7-8 (26,000-80,000lbs+)</option>
        </select>
-       <button>Submit</button>
+       <button className='addTruckSubmit'>Submit</button>
     </form>
     <br/>
     <br/>

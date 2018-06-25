@@ -44,7 +44,6 @@ export const editLoad = (id, editedLoad) => {
                 return final
             }
     }, {})
-    console.log(reduce)
     return dispatch => {
         axios.put(`/loads/${id}`, reduce).then(() => {
             dispatch(getLoadData());

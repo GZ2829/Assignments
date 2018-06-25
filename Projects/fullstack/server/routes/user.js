@@ -8,7 +8,7 @@ const jwt = require('jsonwebtoken')
 userRouter.post('/signup', (req,res) =>{
     bcrypt.hash(req.body.password, 10,(err, hash) =>{
         if (err){
-            res.sendStatus(500).json({
+            res.status(500).send({
                 error: err
             })
         } else {
@@ -18,11 +18,11 @@ userRouter.post('/signup', (req,res) =>{
                 accountType: req.body.accountType,
                 company: req.body.company,
                 aboutYourself: req.body.aboutYourself
-            },
-        )
+            })
             user.save((err, newUser) =>{
-                if(err) return res.sendStatus(500)
-                    return res.send(newUser)
+                if(err) return res.status(500).send(err)
+                const token= jwt.sign({newUser}, 'superSecret', {expiresIn: '1hr'})
+                return res.send(200, token)
             })
         }
     })
@@ -40,7 +40,7 @@ userRouter.post('/login', (req,res)=>{
             if (result){
                   const token = jwt.sign({
                     email: user.email,
-                    userId: user._id
+                    userId: user._id,
 
                 }, 'superSecret',
             {
@@ -48,7 +48,8 @@ userRouter.post('/login', (req,res)=>{
             })
                 return res.status(200).json({
                     message: 'Authorization Successful',
-                    token: token
+                    token: token,
+                    user: user
                 })
             }
             res.status(401).json({
