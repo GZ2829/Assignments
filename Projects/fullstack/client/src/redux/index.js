@@ -10,7 +10,8 @@ import loadReducer from './loads'
 const reducer = combineReducers({
     trucks: truckReducer,
     trailers: trailerReducer,
-    loads: loadReducer
+    loads: loadReducer,
+    user: userReducer
 })
 
 export default createStore(
