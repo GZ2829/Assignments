@@ -52,11 +52,11 @@ class Trucks extends Component {
         }
 
 
-  render() {
-      console.log(this.props)
-      const Vehicles=this.props.trucks.map(truck=>{
+   render() {
+      const {trucks , user} = this.props
+      const Vehicles=trucks.map(truck=>{
           return(
-            <Trucklist id={truck._id} make={truck.make} model={truck.model} year={truck.year} amountOfTrucks={truck.amountOfTrucks} class={truck.class}/>
+            <Trucklist key={truck._id} id={truck._id} make={truck.make} model={truck.model} year={truck.year} amountOfTrucks={truck.amountOfTrucks} class={truck.class}/>
           )
       })
     return (
@@ -77,7 +77,7 @@ class Trucks extends Component {
     <br/>
     <br/>
     <h1>View Your Trucks</h1>
-    <div class='trucktest'>
+    <div className='trucktest'>
     {Vehicles}
     </div>
     </div>
@@ -85,4 +85,4 @@ class Trucks extends Component {
   }
 }
 
-export default connect(state=>({ trucks: state.trucks }), { getTruckData, addTruck })(Trucks)
+export default connect(state=>({ trucks: state.trucks , user: state.user }), { getTruckData, addTruck })(Trucks)

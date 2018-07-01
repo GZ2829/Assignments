@@ -59,14 +59,15 @@ editALoad(e){
 
 
   render() {
+      const {user} = this.props
     return (
         <div className='loads'>
         <h3>Origin: {this.props.originCity}, {this.props.originState}</h3>
         <h3>Going To: {this.props.destinationCity}, {this.props.destinationState}</h3>
         <h4>Trailers Needed: {this.props.typeOfTrailers}</h4>
         <h5>In A Rush? {this.props.isRushed}</h5>
-        <button onClick={this.toggle}>Edit</button>
-        <button onClick={()=>this.deleteLoad(this.props.id)}>Delete</button>
+        {user.accountType === 'Client' || user.accountType==='Admin' ? <button onClick={this.toggle}>Edit</button> : null}
+        {user.accountType === 'Client' ||  user.accountType==='Admin' ? <button onClick={()=>this.deleteLoad(this.props.id)}>Delete</button> : null}
         {this.state.isToggled
           ? <form className='loadboardDiv' onSubmit={this.editALoad}>
           <input name='originCity' type='text' onChange={this.handleInputChange} value={this.state.inputs.originCity} placeholder="Origin City"/>
@@ -207,4 +208,4 @@ editALoad(e){
   }
 }
 
-export default connect(state=>({ loads: state.loads }), { editLoad, removeLoad, getLoadData })(Loadboarddiv)
+export default connect(state=>({user: state.user}), { editLoad, removeLoad, getLoadData })(Loadboarddiv)

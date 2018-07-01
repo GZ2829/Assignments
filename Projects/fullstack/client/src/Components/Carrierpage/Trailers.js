@@ -47,7 +47,7 @@ class Trailer extends Component {
   render() {
     const trailers=this.props.trailers.map(trailer=>{
       return(
-        <Trailerlist id={trailer._id} typeOfTrailer={trailer.typeOfTrailer} model={trailer.model} year={trailer.year} carryingCapacityInLbs={trailer.carryingCapacityInLbs} palletCapacity=
+        <Trailerlist key={trailer._id} id={trailer._id} typeOfTrailer={trailer.typeOfTrailer} model={trailer.model} year={trailer.year} carryingCapacityInLbs={trailer.carryingCapacityInLbs} palletCapacity=
         {trailer.palletCapacity} amountOfTrailers={trailer.amountOfTrailers} />
     )
     })

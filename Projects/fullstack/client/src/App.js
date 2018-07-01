@@ -7,6 +7,7 @@ import Signup from './Components/Signup';
 import Clientpage from './Components/Clientpage/Clientpage';
 import Carrierpage from './Components/Carrierpage/Carrierpage';
 import Loadboard from './Components/Loadboard'
+import Logout from './Components/Logout';
 
 
 const App =() => {
@@ -19,6 +20,7 @@ const App =() => {
           <Route path='/carrierpage' component={Carrierpage}/>
           <Route path='/clientpage' component={Clientpage}/>
           <Route path='/signup' component={Signup}/>
+          <Route path='/logout' component={Logout}/>
       </Switch>
       </div>
     );
