@@ -8,6 +8,8 @@ import Clientpage from './Components/Clientpage/Clientpage';
 import Carrierpage from './Components/Carrierpage/Carrierpage';
 import Loadboard from './Components/Loadboard'
 import Logout from './Components/Logout';
+import Notauth from './Components/Notauth'
+import Profile from './Components/Profile';
 
 
 const App =() => {
@@ -21,6 +23,8 @@ const App =() => {
           <Route path='/clientpage' component={Clientpage}/>
           <Route path='/signup' component={Signup}/>
           <Route path='/logout' component={Logout}/>
+          <Route path='/error' component={Notauth}/>
+          <Route path='/profile' component={Profile}/>
       </Switch>
       </div>
     );

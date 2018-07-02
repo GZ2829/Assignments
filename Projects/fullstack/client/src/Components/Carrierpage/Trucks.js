@@ -53,7 +53,7 @@ class Trucks extends Component {
 
 
    render() {
-      const {trucks , user} = this.props
+      const {trucks} = this.props
       const Vehicles=trucks.map(truck=>{
           return(
             <Trucklist key={truck._id} id={truck._id} make={truck.make} model={truck.model} year={truck.year} amountOfTrucks={truck.amountOfTrucks} class={truck.class}/>

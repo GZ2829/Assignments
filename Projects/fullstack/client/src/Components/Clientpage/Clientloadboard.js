@@ -19,7 +19,7 @@ class Clientloadboard extends Component {
 
   render() {
     console.log(this.props.loads)
-    const loads=this.props.loads.map(load=>{
+    const loads=this.props.loads.map((load)=>{
       return(
         <div className='loads'>
           <h3>Origin: {load.originCity}, {load.originState}</h3>

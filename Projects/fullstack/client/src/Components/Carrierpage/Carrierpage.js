@@ -1,6 +1,7 @@
 import React from 'react';
 import '../../App.css';
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, Redirect} from 'react-router-dom'
+import {connect} from 'react-redux'
 import Carrierbar from './Carrierbar';
 import Carrierloadboard from './Carrierloadboard';
 import Carriertoolbox from './Carriertoolbox';
@@ -8,7 +9,9 @@ import Trucks from './Trucks';
 import Trailers from './Trailers';
 import Bids from './Bids'
 
-const Carrierpage = ({match}) => {
+const Carrierpage = (props) => {
+  const {match} = props
+  if(props.user.accountType === 'Carrier'|| props.user.accountType === 'Admin'){
     return (
       <div className="carrierpage">
       <Carrierbar />
@@ -22,5 +25,11 @@ const Carrierpage = ({match}) => {
       </div>
     );
 }
+else{
+  return(
+    <Redirect to='/error' />
+    )
+}
+}
 
-export default Carrierpage;
+export default connect(state=>({ user: state.user }))(Carrierpage)

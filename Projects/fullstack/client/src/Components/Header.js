@@ -5,11 +5,11 @@ import { connect } from 'react-redux'
 
 class Header extends Component {
   render() {
-    console.log(this.props)
       const {user} = this.props
     return(
       <div className="header">
           <Link to ='/'>Home</Link>
+          {user.loggedIn === true && <Link to='/profile'>Profile</Link>}
           <Link to= '/loadboard'>Load Board</Link>
           {user.accountType === 'Carrier' || user.accountType ==='Admin' ? <Link to='/carrierpage'>Carrier Page</Link> : null}
           {user.accountType === 'Client' || user.accountType ==='Admin' ? <Link to= '/clientpage'>Client Page</Link> : null}

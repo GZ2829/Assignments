@@ -144,7 +144,21 @@
 }
 
 
+/* Not Auth page */
 
+.notauth{
+  padding-top: 75px;
+  text-align: center;
+}
+.notauth h1{
+  position: relative;
+  top: 50%
+}
+
+ /* profile */
+ .profile{
+   padding-top: 75px;
+ }
 
 
 /* This is for the signup page */
@@ -207,7 +221,8 @@
   height: 100vh;
   background: linear-gradient(to right, rgba(0, 0,0, 0.5)), url(https://images.unsplash.com/photo-1473445730015-841f29a9490b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bec1372c6bc20f2bc9692bd09b13dfb9&auto=format&fit=crop&w=1650&q=80);
   padding-bottom: 4.98%;
-  background-position-y: -251px;
+  background-position-y: -71px;
+  background-position-x: 190px
 }
 .carrierbar{
   grid-column: 1/2;
@@ -504,7 +519,7 @@
   padding-top: 50px;
   height: 92vh;
   background: linear-gradient(to right, rgba(0, 0,0, 0.5)), url(https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=37c91c8e3f63462e0739c676dfe8fee8&auto=format&fit=crop&w=1650&q=80);
-  background-position-y: -261px;
+  background-position-y: -169px;
   padding-bottom: 2.98%;
 }
 .clientloadboard{

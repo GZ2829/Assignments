@@ -1,15 +1,18 @@
 import React from 'react';
 import '../../App.css';
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, Redirect} from 'react-router-dom'
+import { connect } from 'react-redux'
 import AddaLoad from './Addaload'
 import Editaload from './Editaload'
 import Clientbar from './Clientbar'
 import Clientloadboard from './Clientloadboard'
 
-const Clientpage = ({match}) =>{
+const Clientpage = (props) =>{
+   const {match} = props
+    if(props.user.accountType === 'Client'|| props.user.accountType === 'Admin'){
     return(
       <div className="clientpage">
-      <Clientbar match={this.match}/>
+      <Clientbar match={match}/>
       <Switch>
           <Route path={`${match.url}/addaload`} component={AddaLoad}/>
           <Route path={`${match.url}/editaload`} component={Editaload}/>
@@ -17,8 +20,12 @@ const Clientpage = ({match}) =>{
       </Switch>
       </div>
     );
-  }
+  } else{
+    return(
+    <Redirect to='/error' />
+    )
+  }} 
   
 
 
-export default Clientpage;
+export default connect(state=>({ user: state.user }))(Clientpage)
