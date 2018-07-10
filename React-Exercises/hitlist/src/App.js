@@ -14,7 +14,7 @@ class App extends Component {
     }
   }
 
-  componentWillMount(){
+  componentDidMount(){
     axios.get('http://api.vschool.io:6543/hitlist.json').then(response =>{
       console.log(response.data)
       this.setState({data: response.data})
@@ -22,8 +22,6 @@ class App extends Component {
   }
 
   render() {
-
-
     const hitlist = this.state.data.map(list =>{
       return(
         <div>
